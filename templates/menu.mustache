@@ -1,0 +1,141 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_accessibilitytool/accessibility
+
+    Displays the list of accessibility options available to the current user.
+
+    Context variables required for this template:
+    * none
+
+    Example context (json):
+    {
+        "colourschemes" : [
+            {
+                "key"   : "contrast",
+                "class" : "hh-acc-th-de",
+                "value" : "clear",
+                "icon"  : "fa-low-vision",
+                "text"  : "Default Moodle Theme"
+            },
+            {...}
+        ],
+        "fontstyles" : [
+            {
+                "key"   : "constrast",
+                "class" : "hh-acc-th-de",
+                "value" : "clear",
+                "icon"  : "fa-low-vision",
+                "text"  : "Default Moodle Theme"
+            },
+            {...}
+        ],
+        "readability" : [
+            {
+                "key"   : "constrast",
+                "class" : "hh-acc-th-de",
+                "value" : "clear",
+                "icon"  : "fa-low-vision",
+                "text"  : "Default Moodle Theme"
+            },
+            {...}
+        ],
+        "textsize" : [
+            {
+                "key"   : "constrast",
+                "class" : "hh-acc-th-de",
+                "value" : "clear",
+                "icon"  : "fa-low-vision",
+                "text"  : "Default Moodle Theme"
+            },
+            {...}
+        ],
+        "readtome" : [
+            {
+                "key"   : "constrast",
+                "class" : "hh-acc-th-de",
+                "value" : "clear",
+                "icon"  : "fa-low-vision",
+                "text"  : "Default Moodle Theme"
+            },
+            {...}
+        ]
+    }
+}}
+
+<div class="card accessibility-card">
+    <div class="card-block">
+        <h3>{{#str}}accessibilitytools, local_accessibilitytool{{/str}}</h3>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 accessibility-group">
+                <h4>{{#str}}colourscheme, local_accessibilitytool{{/str}}</h4>
+                <ul class="accessibility-features">
+                    {{#contrast}}
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                    </li>
+                    {{/contrast}}
+                    {{#stripstyles}}
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                    </li>
+                    {{/stripstyles}}
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 accessibility-group">
+                <h4>{{#str}}fontstyle, local_accessibilitytool{{/str}}</h4>
+                <ul class="accessibility-features">
+                    {{#font}}
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                    </li>
+                    {{/font}}
+                </ul>
+
+                <h4>{{#str}}readability, local_accessibilitytool{{/str}}</h4>
+                <ul class="accessibility-features">
+                    {{#readability}}
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                    </li>
+                    {{/readability}}
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 accessibility-group">
+                <h4>{{#str}}textsize, local_accessibilitytool{{/str}}</h4>
+                <ul class="accessibility-features">
+                    {{#size}}
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                    </li>
+                    {{/size}}
+                </ul>
+
+                {{#readtome_enabled}}
+                <h4>{{#str}}readtome, local_accessibilitytool{{/str}}</h4>
+                <ul class="accessibility-features">
+                    {{#readtome}}
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                    </li>
+                    {{/readtome}}
+                </ul>
+                {{/readtome_enabled}}
+            </div>
+        </div>
+    </div>
+</div>

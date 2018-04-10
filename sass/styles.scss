@@ -1,0 +1,223 @@
+// Accessibility features
+/* Colours */
+$black: #000;
+$blackish: #111;
+$yellow: #cc0;
+$yellowbg: #ee6;
+$grey: #666;
+$white: #f6f6f6;
+$whiteish: #eee;
+$red: #eeb9b9;
+$blue: #b9d9ee;
+
+@import "fonts/fonts";
+
+body {
+    &.at-contrast {
+        &:not(.at-contrast-default) {
+            * {
+                border-radius: 0 !important;
+                text-shadow: none !important;
+            }
+            .dropdown-divider {
+                background-color: $white !important;
+            }
+        }
+        &.at-contrast-yb * {
+            background: $black !important;
+            color: $yellow !important;
+            border-color: $yellow !important;
+        }
+        &.at-contrast-by * {
+            background: $yellowbg !important;
+            color: $blackish !important;
+            border-color: $blackish !important;
+        }
+        &.at-contrast-wg * {
+            background: $grey !important;
+            color: $whiteish !important;
+            border-color: $whiteish !important;
+        }
+        &.at-contrast-br * {
+            background: $red !important;
+            color: $blackish !important;
+            border-color: $blackish !important;
+        }
+        &.at-contrast-bb * {
+            background: $blue !important;
+            color: $blackish !important;
+            border-color: $blackish !important;
+        }
+        &.at-contrast-bw * {
+            background: $white !important;
+            color: $blackish !important;
+            border-color: $blackish !important;
+        }
+    }
+    &.at-font-modern {
+        :not(.fontstyle_default, .fa) {
+            font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+    }
+    &.at-font-classic {
+        :not(.fontstyle_default, .fa) {
+            font-family: "Palatino", "Times New Roman", serif;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: "Palatino", "Times New Roman", serif;
+        }
+    }
+    &.at-font-comic {
+        :not(.fontstyle_default, .fa) {
+            font-family: "AT Comic", "Chalkboard", "Comic Sans", "Comic Sans MS", sans-serif;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: "AT Comic", "Chalkboard", "Comic Sans", "Comic Sans MS", sans-serif;
+        }
+    }
+    &.at-font-mono {
+        :not(.fontstyle_default, .fa) {
+            font-family: "AT Mono", "Menlo", "Courier New", monospace;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: "AT Mono", "Menlo", "Courier New", monospace;
+        }
+    }
+
+    &.at-bold {
+        font-weight: bold !important;
+    }
+
+    &.at-spacing {
+        line-height: 2rem;
+    }
+
+    &.at-size-large {
+        font-size: 120%;
+    }
+    &.at-size-huge {
+        font-size: 140%;
+    }
+    &.at-size-massive {
+        font-size: 160%;
+    }
+    &.at-size-gigantic {
+        font-size: 180%;
+    }
+
+    .at-setting {
+        display: block;
+        line-height: 24px !important;
+        padding: 3px 10px;
+        margin-bottom: 5px;
+        &.contrast_yb {
+            background-color: $black !important; color: $yellow !important;
+        }
+        &.contrast_by {
+            background-color: $yellowbg !important; color: $blackish !important;
+        }
+        &.contrast_wg {
+            background-color: $grey !important; color: $whiteish !important;
+        }
+        &.contrast_br {
+            background-color: $red !important; color: $blackish !important;
+        }
+        &.contrast_bb {
+            background-color: $blue !important; color: $blackish !important;
+        }
+        &.contrast_bw {
+            background-color: $white !important; color: $blackish !important;
+        }
+
+        &.fontstyle_modern {
+            font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+        }
+        &.fontstyle_classic {
+            font-family: "Palatino", "Times New Roman", serif !important;
+        }
+        &.fontstyle_comic {
+            font-family: "At Comic", sans-serif !important;
+        }
+        &.fontstyle_mono {
+            font-family: "AT Mono", "Menlo", "Courier New", monospace !important;
+        }
+
+        &.size_default {
+            font-size: 1rem;
+        }
+        &.size_large {
+            font-size: 1.2rem;
+        }
+        &.size_huge {
+            font-size: 1.4rem;
+        }
+        &.size_massive {
+            font-size: 1.6rem;
+        }
+        &.size_gigantic {
+            font-size: 1.8rem;
+        }
+
+        i {
+            display: inline-block;
+            width: 24px;
+            text-align: center;
+            margin-right: 5px;
+        }
+    }
+}
+
+
+body.hillhead-contrast #nav-drawer {
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+body.hillhead-contrast header .navbar-brand {
+    background-image: none;
+}
+
+body.hillhead-contrast header .navbar-brand span.site-name {
+    text-indent: 0;
+}
+
+
+.card.accessibility-card {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.accessibility-card h3 {
+    margin-bottom: 20px;
+}
+
+.accessibility-card .accessibility-group h4 {
+    background-color: #eee;
+    border-bottom: 1px solid #ddd;
+    line-height: 24px !important;
+    padding: 3px 10px;
+    margin-bottom: 5px;
+}
+
+.list-group.accessibility-toggle {
+    margin-bottom: 20px;
+}
+
+
+.accessibility-features {
+    margin: 0;
+    padding-left: 0;
+}
+
+.accessibility-features li {
+    display: block;
+    padding-left: 0;
+}
+
+.currentlySpeakingHighlight {
+    background-color: #FEC34E !important;
+    color: #000 !important;
+}
