@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Prints the Accessibility Tool user preference page.
+ *
  * @package   local_accessibilitytool
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2018 University of Chichester {@link www.chi.ac.uk}

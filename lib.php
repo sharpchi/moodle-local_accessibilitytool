@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Accessibility Tool plugin library.
+ *
  * @package   local_accessibilitytool
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
@@ -26,9 +28,12 @@ namespace local_accessibilitytool;
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . "/local/accessibilitytool/locallib.php");
-// settings_navigation $settingsnav
-// function before_http_headers
-// function local_accessibilitytool_extend_navigation(global_navigation $navigation) {
+
+/**
+ * Called by theme's page_init function to set classes and load scripts.
+ *
+ * @param \moodle_page $page Main page object.
+ */
 function page_init(\moodle_page $page) {
     add_usermenuitem();
     apply_settings($page);

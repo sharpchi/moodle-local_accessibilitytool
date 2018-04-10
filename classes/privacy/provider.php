@@ -72,7 +72,7 @@ class provider implements \core_privacy\local\metadata\provider,
                     get_string($descriptionidentifier,
                         "local_accessibilitytool",
                         (object) [
-                            "value" => $v
+                            "value" => $selected_value
                         ]
                     )
                 );

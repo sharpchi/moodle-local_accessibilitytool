@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Functions used by the Accessibility Tool.
+ *
  * @package   local_accessibilitytool
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
@@ -26,7 +28,7 @@ namespace local_accessibilitytool;
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Adds user menuitem if not already present.
+ * Adds user menu item if not already present.
  */
 function add_usermenuitem() {
     $menuitems = get_config("core", 'customusermenuitems');
@@ -34,7 +36,7 @@ function add_usermenuitem() {
         return;
     }
 
-    $linetoadd = "accessibilitytool,local_accessibilitytool|/local/accessibilitytool/manage.php|accessibility\n";
+    $linetoadd = "accessibilitytool,local_accessibilitytool|/local/accessibilitytool/manage.php\n";
     $menuitems = $linetoadd . $menuitems;
     set_config('customusermenuitems', $menuitems);
 }
@@ -47,7 +49,9 @@ function remove_usermenuitem() {
 }
 
 /**
- * Applies user preferences to current page.
+ * Applies user preferences to current page
+ * by adding classes to header and loading javascript.
+ * @param moodle_page $page Page object
  */
 function apply_settings(\moodle_page $page) {
 
@@ -91,5 +95,4 @@ function apply_settings(\moodle_page $page) {
 
     $page->add_body_classes($extraclasses);
 
-    $page->requires->strings_for_js(['help'], 'moodle');
 }

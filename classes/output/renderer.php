@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Renderer class for local_accessibilitytool.
+ *
  * @package   local_accessibilitytool
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
@@ -27,8 +29,17 @@ use stdClass;
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Renderer class for local_accessibilitytool.
+ */
 class renderer extends renderer_base {
 
+    /**
+     * Render the tool's menu.
+     *
+     * @param \local_accessibilitytool\output\menu $menu Menu renderable.
+     * @return string HTML for the page.
+     */
     public function render_menu(menu $menu) {
         $data = $menu->export_for_template($this);
         return $this->render_from_template('local_accessibilitytool/menu', $data);

@@ -15,6 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Menu rendererable page.
  * @package   local_accessibilitytool
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
@@ -30,18 +31,40 @@ use renderer_base;
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Menu class.
+ **/
 class menu implements renderable, templatable {
+    /** @var stdClass $data Template object. */
     protected $data;
 
+    /** @var array $contrast_settings List of valid contrast settings. */
     private $contrast_settings = ["default", "yb", "by", "wg", "br", "bb", "bw"];
+
+    /** @var array $binary_settings List of valid binary settings. */
     private $binary_settings = [0, 1];
+
+    /** @var array $font_settings List of valid font settings. */
     private $font_settings = ["default", "modern", "classic", "comic", "mono"];
+
+    /** @var array $size_settings List of valid font size settings. */
     private $size_settings = ["default", "large", "huge", "massive", "gigantic"];
 
+    /**
+     * Construct this renderable.
+     *
+     * @param \local_accessibilitytool\menu $data
+     */
     public function __construct($data = null) {
         $this->data = new stdClass();
     }
 
+    /**
+     * Export this data so it can be used as the context for a mustache template.
+     *
+     * @param renderer_base $output
+     * @return stdClass
+     */
     public function export_for_template(renderer_base $output) {
         $plugin_settings = get_config("local_accessibilitytool");
         $data = new stdClass();
@@ -129,10 +152,15 @@ class menu implements renderable, templatable {
             $this->data->readtome_enabled = $plugin_settings->readtome_enabled;
         }
 
-
         return $this->data;
     }
 
+    /**
+     * Sets appropriate user preference, if valid.
+     *
+     * @param string $key Preference name.
+     * @param string $value The value to be set.
+     */
     public function set_user_preference($key, $value) {
         switch ($key) {
             case "contrast":
