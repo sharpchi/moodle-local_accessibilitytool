@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Implementation of provider class.
+ *
  * @package   local_accessibilitytool
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
@@ -26,10 +28,18 @@ use \core_privacy\local\metadata\collection;
 use \core_privacy\local\request\writer;
 
 defined('MOODLE_INTERNAL') || die();
-
+/**
+ * Implmentation of provider class.
+ */
 class provider implements \core_privacy\local\metadata\provider,
     \core_privacy\local\request\user_preference_provider {
 
+    /**
+     * Returns meta data about this system.
+     *
+     * @param   collection $collection The initialised collection to add items to.
+     * @return  collection     A listing of user data stored through this system.
+     */
     public static function get_metadata(collection $collection) : collection {
         $collection->add_user_preference('accessibilitytool_contrast',
             'privacy:metadata:preference:contrast');
@@ -48,6 +58,11 @@ class provider implements \core_privacy\local\metadata\provider,
         return $collection;
     }
 
+    /**
+     * Store all user preferences for the plugin.
+     *
+     * @param   int         $userid The userid of the user whose data is to be exported.
+     */
     public static function export_user_preferences(int $userid) {
         $preferences = get_user_preferences();
         $accessibilitytool_params = [
@@ -60,23 +75,24 @@ class provider implements \core_privacy\local\metadata\provider,
             "accessibilitytool_readtome"];
         foreach ($preferences as $name => $value) {
             $descriptionidentifier = null;
-            if (in_array($name, $accessibilitytool_params)) {
-                $param_name = str_replace("accessibilitytool_", "", $name);
-                $descriptionidentifier = "privacy:request:preference:" . $param_name;
-                $v = ($value === 1) ? "on" : $value;
-                $selected_value = get_string($param_name . $v, "local_accessibilitytool");
-                writer::export_user_preference(
-                    "local_accessibilitytool",
-                    $name,
-                    $value,
-                    get_string($descriptionidentifier,
-                        "local_accessibilitytool",
-                        (object) [
-                            "value" => $selected_value
-                        ]
-                    )
-                );
+            if (!in_array($name, $accessibilitytool_params)) {
+                continue;
             }
+            $param_name = str_replace("accessibilitytool_", "", $name);
+            $descriptionidentifier = "privacy:request:preference:" . $param_name;
+            $v = ($value === 1) ? "on" : $value;
+            $selected_value = get_string($param_name . $v, "local_accessibilitytool");
+            writer::export_user_preference(
+                "local_accessibilitytool",
+                $name,
+                $value,
+                get_string($descriptionidentifier,
+                    "local_accessibilitytool",
+                    (object) [
+                        "value" => $selected_value
+                    ]
+                )
+            );
         }
 
     }
