@@ -23,8 +23,6 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_accessibilitytool;
-
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . "/local/accessibilitytool/locallib.php");
@@ -32,18 +30,18 @@ require_once($CFG->dirroot . "/local/accessibilitytool/locallib.php");
 /**
  * Called by theme's page_init function to set classes and load scripts.
  *
- * @param \moodle_page $page Main page object.
+ * @param moodle_page $page Main page object.
  */
-function page_init(\moodle_page $page) {
-    add_usermenuitem();
-    apply_settings($page);
+function local_accessibilitytool_page_init(moodle_page $page) {
+    \local_accessibilitytool\add_usermenuitem();
+    \local_accessibilitytool\apply_settings($page);
 }
 
 /**
  * Get icon mapping for font-awesome.
  */
-function get_fontawesome_icon_map() {
+function local_accessibilitytool_get_fontawesome_icon_map() {
     return [
-        'local_accessibilitytool:accessibility' => 'fa-universal-access'
+        'core:t/../e/accessibility_checker' => 'fa-universal-access'
     ];
 }

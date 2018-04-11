@@ -18,7 +18,7 @@ This plugin has a dependencies on Boost, and requires a call from your own theme
 function theme_yourthemename_page_init(moodle_page $page) {
     global $CFG;
     require_once($CFG->dirroot . "/local/accessibilitytool/lib.php");
-    \local_accessibilitytool\page_init($page);
+    local_accessibilitytool_page_init($page);
 }
 ```
 to *your* theme's lib.php file.
