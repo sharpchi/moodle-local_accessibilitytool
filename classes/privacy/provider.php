@@ -55,6 +55,8 @@ class provider implements \core_privacy\local\metadata\provider,
             'privacy:metadata:preference:size');
         $collection->add_user_preference('accessibilitytool_readtome',
             'privacy:metadata:preference:readtome');
+        $collection->add_user_preference('accessibilitytool_gridformat',
+            'privacy:metadata:preference:gridformat');
         return $collection;
     }
 
@@ -72,7 +74,8 @@ class provider implements \core_privacy\local\metadata\provider,
             "accessibilitytool_bold",
             "accessibilitytool_spacing",
             "accessibilitytool_size",
-            "accessibilitytool_readtome"];
+            "accessibilitytool_readtome",
+            "accessibilitytool_gridformat"];
         foreach ($preferences as $name => $value) {
             $descriptionidentifier = null;
             if (!in_array($name, $accessibilitytool_params)) {
