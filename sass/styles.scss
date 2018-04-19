@@ -109,10 +109,11 @@ body {
     }
 
     .at-setting {
-        display: block;
-        line-height: 24px !important;
-        padding: 3px 10px;
-        margin-bottom: 5px;
+        // display: block;
+        // line-height: 24px !important;
+        // padding: 3px 10px;
+        // margin-bottom: 5px;
+        padding: 3px;
         &.contrast_yb {
             background-color: $black !important; color: $yellow !important;
         }
@@ -162,28 +163,14 @@ body {
         }
 
         i {
-            display: inline-block;
-            width: 24px;
-            text-align: center;
-            margin-right: 5px;
+            // display: inline-block;
+            // width: 24px;
+            // text-align: center;
+            margin: 0 5px;
         }
+
     }
 }
-
-
-body.hillhead-contrast #nav-drawer {
-    border-right-width: 1px;
-    border-right-style: solid;
-}
-
-body.hillhead-contrast header .navbar-brand {
-    background-image: none;
-}
-
-body.hillhead-contrast header .navbar-brand span.site-name {
-    text-indent: 0;
-}
-
 
 .card.accessibility-card {
     margin-bottom: 0;
@@ -208,13 +195,21 @@ body.hillhead-contrast header .navbar-brand span.site-name {
 
 
 .accessibility-features {
-    margin: 0;
-    padding-left: 0;
+    // margin: 0;
+    // padding-left: 0;
+    padding: 3px;
 }
 
 .accessibility-features li {
     display: block;
-    padding-left: 0;
+    // padding-left: 0;
+    list-style: none;
+    margin-bottom: 5px;
+    a {
+        &.btn-link {
+            border-width: 0;
+        }
+    }
 }
 
 .currentlySpeakingHighlight {

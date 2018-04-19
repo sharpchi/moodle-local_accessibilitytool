@@ -66,6 +66,7 @@ class menu implements renderable, templatable {
      * @return stdClass
      */
     public function export_for_template(renderer_base $output) {
+        global $OUTPUT;
         $plugin_settings = get_config("local_accessibilitytool");
         $data = new stdClass();
         // Contrast
@@ -152,6 +153,20 @@ class menu implements renderable, templatable {
             $this->data->readtome_enabled = $plugin_settings->readtome_enabled;
         }
 
+        $gridformat = get_user_preferences("accessibilitytool_gridformat", 0);
+        $item = new stdClass();
+        $item->key = "gridformat";
+        $item->value = 1;
+        $item->icon = "fa-columns"; //table
+        $item->text = get_string("gridformaton", "local_accessibilitytool");
+        $item->help = $OUTPUT->help_icon("gridformat", "local_accessibilitytool");
+        $item->selected = false;
+        if ($gridformat == 1) {
+            $item->value = 0;
+            $item->selected = true;
+        }
+        $this->data->readability[] = $item;
+
         return $this->data;
     }
 
@@ -172,6 +187,7 @@ class menu implements renderable, templatable {
             case "bold":
             case "spacing":
             case "readtome":
+            case "gridformat":
                 if (!in_array($value, $this->binary_settings)) {
                     return false;
                 }

@@ -26,6 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 $string['pluginname'] = "Accessibility Tool";
 $string['accessibilitytool'] = "Accessibility Tool";
 $string['accessibilitytools'] = "Accessibility Tools";
+$string['accessibilitytoolpreferences'] = "Accessibility tool preferences";
 
 /* Colour scheme */
 $string['colourscheme'] = "Colour Scheme";
@@ -66,8 +67,15 @@ $string['sizegigantic'] = "Gigantic text size";
 $string['readtome'] = "Read to Me";
 $string['readtomeon'] = "Turn on Read-to-Me";
 $string['readtomeoff'] = "Turn off Read-to-Me";
-$string['readtomealert'] = "Read To Me doesn't work in Internet Explorer because it doesn't support Text To Speech." +
+$string['readtomealert'] = "Read To Me doesn't work in Internet Explorer because it doesn't support Text To Speech." .
             " We recommend you use Google Chrome or Firefox instead if you want to use Read To Me.";
+
+/* Gridformat */
+$string['gridformat'] = "Flatten gridformat";
+$string['gridformaton'] = "Flatten gridformat layout";
+$string['gridformatoff'] = "Use gridformat layout normally";
+$string['gridformat_help'] = "Some courses use gridformat to enhance the visual user experience. " .
+    "This, however, causes issues for screenreaders. If you're using a screenreader, please switch on this setting.";
 
 /* Privacy */
 $string["privacy:metadata:preference:contrast"] = "The contrast theme selected by the user.";
@@ -84,3 +92,4 @@ $string["privacy:request:preference:bold"] = 'Bold set to: {$a->value}';
 $string["privacy:request:preference:spacing"] = 'Spacing set to use: {$a->value}';
 $string["privacy:request:preference:size"] = 'Text set to use: {$a->value}';
 $string["privacy:request:preference:readtome"] = 'Readtome set to use: {$a->value}';
+$string["privacy:request:preference:gridformat"] = 'Flatten Gridformat set to use: {$a->value}';

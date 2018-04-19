@@ -86,12 +86,12 @@
                 <ul class="accessibility-features">
                     {{#contrast}}
                     <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
-                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                     </li>
                     {{/contrast}}
                     {{#stripstyles}}
                     <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
-                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                     </li>
                     {{/stripstyles}}
                 </ul>
@@ -101,7 +101,7 @@
                 <ul class="accessibility-features">
                     {{#font}}
                     <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
-                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                     </li>
                     {{/font}}
                 </ul>
@@ -110,7 +110,8 @@
                 <ul class="accessibility-features">
                     {{#readability}}
                     <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
-                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                        <i class="fa {{icon}}"></i>{{text}}{{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
+                        {{{help}}}
                     </li>
                     {{/readability}}
                 </ul>
@@ -120,7 +121,7 @@
                 <ul class="accessibility-features">
                     {{#size}}
                     <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
-                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                     </li>
                     {{/size}}
                 </ul>
@@ -130,7 +131,7 @@
                 <ul class="accessibility-features">
                     {{#readtome}}
                     <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
-                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square"></i>{{/selected}}</a>
+                        <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                     </li>
                     {{/readtome}}
                 </ul>
