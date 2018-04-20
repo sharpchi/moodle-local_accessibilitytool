@@ -4,11 +4,12 @@ $black: #000;
 $blackish: #111;
 $yellow: #cc0;
 $yellowbg: #ee6;
-$grey: #666;
+$grey: #444; // 444/666?
 $white: #f6f6f6;
 $whiteish: #eee;
 $red: #eeb9b9;
 $blue: #b9d9ee;
+$green: #11d711;
 
 @import "fonts/fonts";
 
@@ -52,6 +53,11 @@ body {
             background: $white !important;
             color: $blackish !important;
             border-color: $blackish !important;
+        }
+        &.at-contrast-gb * {
+            color: $green !important;
+            background: $black !important;
+            border-color: $green !important;
         }
     }
     &.at-font-modern {
@@ -131,6 +137,9 @@ body {
         }
         &.contrast_bw {
             background-color: $white !important; color: $blackish !important;
+        }
+        &.contrast_gb {
+            background-color: $black !important; color: $green !important;
         }
 
         &.fontstyle_modern {

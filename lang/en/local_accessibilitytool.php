@@ -37,6 +37,7 @@ $string['contrastwg'] = "White on Grey theme";
 $string['contrastbr'] = "Black on Red theme";
 $string['contrastbb'] = "Black on Blue theme";
 $string['contrastbw'] = "Black on White theme";
+$string['contrastgb'] = "Green on Black theme";
 $string['stripstyleson'] = "Apply theme to all content";
 $string['stripstylesoff'] = "Don't apply theme to all content";
 

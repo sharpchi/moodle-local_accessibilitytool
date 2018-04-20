@@ -68,7 +68,7 @@ function apply_settings(\moodle_page $page) {
     }
 
     $contrast = get_user_preferences('accessibilitytool_contrast', "default");
-    if (in_array($contrast, ['by', 'yb', 'wg', 'bb', 'br', 'bw'])) {
+    if (in_array($contrast, ['by', 'yb', 'wg', 'bb', 'br', 'bw', 'gb'])) {
         $extraclasses[] = 'at-contrast';
         $extraclasses[] = 'at-contrast-' . $contrast;
     }
