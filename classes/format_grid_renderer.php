@@ -27,6 +27,7 @@ if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) :
     include_once($CFG->dirroot . "/course/format/grid/renderer.php");
 
     class local_accessibilitytool_format_grid_renderer extends format_grid_renderer {
+
         /**
          * Output the html for a multiple section page
          *
@@ -37,12 +38,24 @@ if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) :
          * @param array $modnamesused
          */
         public function print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused) {
-            $preference = get_user_preferences('accessibilitytool_gridformat');
-            if (!empty($preference)) {
+            $at_preference = get_user_preferences('accessibilitytool_gridformat');
+            if (!empty($at_preference)) {
                 return format_section_renderer_base::print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused);
             } else {
                 return format_grid_renderer::print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused);
             }
+        }
+
+        /**
+         * Generate the starting container html for a list of sections
+         * @return string HTML to output.
+         */
+        protected function start_section_list() {
+            $at_preference = get_user_preferences('accessibilitytool_gridformat');
+            if (!empty($at_preference)) {
+                return html_writer::start_tag('ul', array('class' => 'topics'));
+            }
+            return format_grid_renderer::start_section_list();
         }
     }
 endif;

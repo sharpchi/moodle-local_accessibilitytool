@@ -23,8 +23,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot . "/local/accessibilitytool/classes/format_grid_renderer.php");
+if (file_exists($CFG->dirroot . "/local/accessibilitytool/classes/format_grid_renderer.php")) :
+    require_once($CFG->dirroot . "/local/accessibilitytool/classes/format_grid_renderer.php");
 
-class theme_yourtheme_format_grid_renderer extends local_accessibilitytool_format_grid_renderer {
+    class theme_yourtheme_format_grid_renderer extends local_accessibilitytool_format_grid_renderer {
 
-}
+    }
+endif;
