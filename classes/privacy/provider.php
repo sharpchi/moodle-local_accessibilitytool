@@ -56,7 +56,7 @@ class provider implements \core_privacy\local\metadata\provider,
         $collection->add_user_preference('accessibilitytool_readtome',
             'privacy:metadata:preference:readtome');
         $collection->add_user_preference('accessibilitytool_gridformat',
-            'privacy:metadata:preference:gridformat');
+            'privacy:request:preference:gridformat');
         return $collection;
     }
 
