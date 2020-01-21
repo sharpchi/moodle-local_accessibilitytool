@@ -24,10 +24,12 @@
 
 namespace local_accessibilitytool\output;
 
-use stdClass;
+use moodle_url;
 use renderable;
-use templatable;
 use renderer_base;
+use stdClass;
+use templatable;
+
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -50,6 +52,7 @@ class menu implements renderable, templatable {
     /** @var array $size_settings List of valid font size settings. */
     private $size_settings = ["default", "large", "huge", "massive", "gigantic"];
 
+    private $returnurl;
     /**
      * Construct this renderable.
      *
@@ -166,7 +169,8 @@ class menu implements renderable, templatable {
             $item->selected = true;
         }
         $this->data->readability[] = $item;
-
+        $this->data->returnurl = $this->returnurl;
+        $this->data->atr = urlencode($this->returnurl);
         return $this->data;
     }
 
@@ -211,5 +215,9 @@ class menu implements renderable, templatable {
             unset_user_preference("accessibilitytool_" . $key);
         }
 
+    }
+
+    public function set_returnurl(moodle_url $returnurl) {
+        $this->returnurl = $returnurl->out();
     }
 }

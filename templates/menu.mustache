@@ -80,17 +80,18 @@
 <div class="card accessibility-card">
     <div class="card-block">
         <h3>{{#str}}accessibilitytools, local_accessibilitytool{{/str}}</h3>
+        <a class="btn btn-success" href="{{{returnurl}}}" title="{{#str}}returnhelp, local_accessibilitytool{{/str}}">{{#str}}return, local_accessibilitytool{{/str}}</a>
         <div class="row">
             <div class="col-xs-12 col-sm-4 accessibility-group">
                 <h4>{{#str}}colourscheme, local_accessibilitytool{{/str}}</h4>
                 <ul class="accessibility-features">
                     {{#contrast}}
-                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}&atr={{atr}}">
                         <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                     </li>
                     {{/contrast}}
                     {{#stripstyles}}
-                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}&atr={{atr}}">
                         <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                     </li>
                     {{/stripstyles}}
@@ -100,7 +101,7 @@
                 <h4>{{#str}}fontstyle, local_accessibilitytool{{/str}}</h4>
                 <ul class="accessibility-features">
                     {{#font}}
-                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}&atr={{atr}}">
                         <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                     </li>
                     {{/font}}
@@ -109,7 +110,7 @@
                 <h4>{{#str}}readability, local_accessibilitytool{{/str}}</h4>
                 <ul class="accessibility-features">
                     {{#readability}}
-                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}&atr={{atr}}">
                         <i class="fa {{icon}}"></i>{{text}}{{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                         {{{help}}}
                     </li>
@@ -120,7 +121,7 @@
                 <h4>{{#str}}textsize, local_accessibilitytool{{/str}}</h4>
                 <ul class="accessibility-features">
                     {{#size}}
-                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}&atr={{atr}}">
                         <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                     </li>
                     {{/size}}
@@ -130,7 +131,7 @@
                 <h4>{{#str}}readtome, local_accessibilitytool{{/str}}</h4>
                 <ul class="accessibility-features">
                     {{#readtome}}
-                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}">
+                    <li><a class="at-setting {{key}}_{{value}}" href="{{config.wwwroot}}/local/accessibilitytool/manage.php?k={{key}}&v={{value}}&atr={{atr}}">
                         <i class="fa {{icon}}"></i>{{text}} {{#selected}}<i class="fa fa-check-square" alt="{{#str}} selected, form {{/str}}" title="{{#str}} selected, form {{/str}}"></i>{{/selected}}</a>
                     </li>
                     {{/readtome}}

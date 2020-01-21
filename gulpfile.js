@@ -1,11 +1,13 @@
+// https://www.sitepoint.com/simple-gulpy-workflow-sass/
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 var minifyCss = require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
 var notify = require('gulp-notify');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
+// var uglify = require('gulp-uglify');
+// var rename = require('gulp-rename');
 var run = require('gulp-run');
 
 gulp.task('sass', function() {

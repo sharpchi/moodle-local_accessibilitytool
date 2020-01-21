@@ -1,0 +1,44 @@
+body {
+    &.at-contrast {
+        &.at-contrast-gb * {
+            color: $green !important; /* stylelint-disable-line declaration-no-important */
+            background-color: $black !important; /* stylelint-disable-line declaration-no-important */
+            border-color: $green !important; /* stylelint-disable-line declaration-no-important */
+            a,
+            .btn {
+                &:hover,
+                &:focus,
+                &.active {
+                    * {
+                        background-color: $green !important; /* stylelint-disable-line declaration-no-important */
+                        color: $black !important; /* stylelint-disable-line declaration-no-important */
+                    }
+                    background-color: $green !important; /* stylelint-disable-line declaration-no-important */
+                    color: $black !important; /* stylelint-disable-line declaration-no-important */
+                }
+            }
+            .active * {
+                background-color: $green !important; /* stylelint-disable-line declaration-no-important */
+                color: $black !important; /* stylelint-disable-line declaration-no-important */
+            }
+            #region-main {
+                a {
+                    &:not(.dropdown-item) {
+                        border-bottom: solid 1px $green;
+                    }
+                }
+            }
+            .navbar {
+                border-bottom: solid 1px $green;
+            }
+            #gridshadebox_overlay {
+                background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
+            }
+            #gridshadebox_content {
+                .gridshadebox_area * {
+                    background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
+                }
+            }
+        }
+    }
+}

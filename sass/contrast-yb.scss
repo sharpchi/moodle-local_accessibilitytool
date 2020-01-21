@@ -1,0 +1,44 @@
+body {
+    &.at-contrast {
+        &.at-contrast-yb * {
+            background-color: $black !important; /* stylelint-disable-line declaration-no-important */
+            color: $yellow !important; /* stylelint-disable-line declaration-no-important */
+            border-color: $yellow !important; /* stylelint-disable-line declaration-no-important */
+            a,
+            .btn {
+                &:hover,
+                &:focus,
+                &.active {
+                    * {
+                        background-color: $yellow !important; /* stylelint-disable-line declaration-no-important */
+                        color: $black !important; /* stylelint-disable-line declaration-no-important */
+                    }
+                    background-color: $yellow !important; /* stylelint-disable-line declaration-no-important */
+                    color: $black !important; /* stylelint-disable-line declaration-no-important */
+                }
+            }
+            .active * {
+                background-color: $yellow !important; /* stylelint-disable-line declaration-no-important */
+                color: $black !important; /* stylelint-disable-line declaration-no-important */
+            }
+            #region-main {
+                a {
+                    &:not(.dropdown-item) {
+                        border-bottom: solid 1px $yellow;
+                    }
+                }
+            }
+            .navbar {
+                border-bottom: solid 1px $yellow;
+            }
+            #gridshadebox_overlay {
+                background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
+            }
+            #gridshadebox_content {
+                .gridshadebox_area * {
+                    background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
+                }
+            }
+        }
+    }
+}

@@ -23,10 +23,13 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = "Accessibility Tool";
+
 $string['accessibilitytool'] = "Accessibility Tool";
 $string['accessibilitytools'] = "Accessibility Tools";
 $string['accessibilitytoolpreferences'] = "Accessibility tool preferences";
+$string['pluginname'] = "Accessibility Tool";
+$string['return'] = "Return";
+$string['returnhelp'] = "Return to the page you were looking at before coming here";
 
 /* Colour scheme */
 $string['colourscheme'] = "Colour Scheme";

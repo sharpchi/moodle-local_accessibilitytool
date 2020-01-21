@@ -12,89 +12,18 @@ $blue: #b9d9ee;
 $green: #11d711;
 
 @import "fonts/fonts";
+@import "contrast";
+@import "contrast-yb";
+@import "contrast-by";
+@import "contrast-wg";
+@import "contrast-br";
+@import "contrast-bb";
+@import "contrast-bw";
+@import "contrast-gb";
 
 body {
-    &.at-contrast {
-        &:not(.at-contrast-default) {
-            * {
-                border-radius: 0 !important;
-                text-shadow: none !important;
-            }
-            .dropdown-divider {
-                background-color: $white !important;
-            }
-        }
-        &.at-contrast-yb * {
-            background: $black !important;
-            color: $yellow !important;
-            border-color: $yellow !important;
-        }
-        &.at-contrast-by * {
-            background: $yellowbg !important;
-            color: $blackish !important;
-            border-color: $blackish !important;
-        }
-        &.at-contrast-wg * {
-            background: $grey !important;
-            color: $whiteish !important;
-            border-color: $whiteish !important;
-        }
-        &.at-contrast-br * {
-            background: $red !important;
-            color: $blackish !important;
-            border-color: $blackish !important;
-        }
-        &.at-contrast-bb * {
-            background: $blue !important;
-            color: $blackish !important;
-            border-color: $blackish !important;
-        }
-        &.at-contrast-bw * {
-            background: $white !important;
-            color: $blackish !important;
-            border-color: $blackish !important;
-        }
-        &.at-contrast-gb * {
-            color: $green !important;
-            background: $black !important;
-            border-color: $green !important;
-        }
-    }
-    &.at-font-modern {
-        :not(.fontstyle_default, .fa) {
-            font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-        }
-        h1, h2, h3, h4, h5 {
-            font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-        }
-    }
-    &.at-font-classic {
-        :not(.fontstyle_default, .fa) {
-            font-family: "Palatino", "Times New Roman", serif;
-        }
-        h1, h2, h3, h4, h5 {
-            font-family: "Palatino", "Times New Roman", serif;
-        }
-    }
-    &.at-font-comic {
-        :not(.fontstyle_default, .fa) {
-            font-family: "AT Comic", "Chalkboard", "Comic Sans", "Comic Sans MS", sans-serif;
-        }
-        h1, h2, h3, h4, h5 {
-            font-family: "AT Comic", "Chalkboard", "Comic Sans", "Comic Sans MS", sans-serif;
-        }
-    }
-    &.at-font-mono {
-        :not(.fontstyle_default, .fa) {
-            font-family: "AT Mono", "Menlo", "Courier New", monospace;
-        }
-        h1, h2, h3, h4, h5 {
-            font-family: "AT Mono", "Menlo", "Courier New", monospace;
-        }
-    }
-
     &.at-bold {
-        font-weight: bold !important;
+        font-weight: bold !important; /* stylelint-disable-line declaration-no-important */
     }
 
     &.at-spacing {
@@ -121,38 +50,45 @@ body {
         // margin-bottom: 5px;
         padding: 3px;
         &.contrast_yb {
-            background-color: $black !important; color: $yellow !important;
+            background-color: $black !important; /* stylelint-disable-line declaration-no-important */
+            color: $yellow !important; /* stylelint-disable-line declaration-no-important */
         }
         &.contrast_by {
-            background-color: $yellowbg !important; color: $blackish !important;
+            background-color: $yellowbg !important; /* stylelint-disable-line declaration-no-important */
+            color: $blackish !important; /* stylelint-disable-line declaration-no-important */
         }
         &.contrast_wg {
-            background-color: $grey !important; color: $whiteish !important;
+            background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
+            color: $whiteish !important; /* stylelint-disable-line declaration-no-important */
         }
         &.contrast_br {
-            background-color: $red !important; color: $blackish !important;
+            background-color: $red !important; /* stylelint-disable-line declaration-no-important */
+            color: $blackish !important; /* stylelint-disable-line declaration-no-important */
         }
         &.contrast_bb {
-            background-color: $blue !important; color: $blackish !important;
+            background-color: $blue !important; /* stylelint-disable-line declaration-no-important */
+            color: $blackish !important; /* stylelint-disable-line declaration-no-important */
         }
         &.contrast_bw {
-            background-color: $white !important; color: $blackish !important;
+            background-color: $white !important; /* stylelint-disable-line declaration-no-important */
+            color: $blackish !important; /* stylelint-disable-line declaration-no-important */
         }
         &.contrast_gb {
-            background-color: $black !important; color: $green !important;
+            background-color: $black !important; /* stylelint-disable-line declaration-no-important */
+            color: $green !important; /* stylelint-disable-line declaration-no-important */
         }
 
         &.fontstyle_modern {
-            font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+            font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif !important; /* stylelint-disable-line declaration-no-important */
         }
         &.fontstyle_classic {
-            font-family: "Palatino", "Times New Roman", serif !important;
+            font-family: "Palatino", "Times New Roman", serif !important; /* stylelint-disable-line declaration-no-important */
         }
         &.fontstyle_comic {
-            font-family: "At Comic", sans-serif !important;
+            font-family: "At Comic", sans-serif !important; /* stylelint-disable-line declaration-no-important */
         }
         &.fontstyle_mono {
-            font-family: "AT Mono", "Menlo", "Courier New", monospace !important;
+            font-family: "AT Mono", "Menlo", "Courier New", monospace !important; /* stylelint-disable-line declaration-no-important */
         }
 
         &.size_default {
@@ -193,7 +129,7 @@ body {
 .accessibility-card .accessibility-group h4 {
     background-color: #eee;
     border-bottom: 1px solid #ddd;
-    line-height: 24px !important;
+    line-height: 24px !important; /* stylelint-disable-line declaration-no-important */
     padding: 3px 10px;
     margin-bottom: 5px;
 }
@@ -222,6 +158,6 @@ body {
 }
 
 .currentlySpeakingHighlight {
-    background-color: #FEC34E !important;
-    color: #000 !important;
+    background-color: #fec34e !important; /* stylelint-disable-line declaration-no-important */
+    color: #000 !important; /* stylelint-disable-line declaration-no-important */
 }

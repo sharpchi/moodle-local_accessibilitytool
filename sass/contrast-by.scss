@@ -1,0 +1,44 @@
+body {
+    &.at-contrast {
+        &.at-contrast-by * {
+            background-color: $yellowbg !important; /* stylelint-disable-line declaration-no-important */
+            color: $blackish !important; /* stylelint-disable-line declaration-no-important */
+            border-color: $blackish !important; /* stylelint-disable-line declaration-no-important */
+            a,
+            .btn {
+                &:hover,
+                &:focus,
+                &.active {
+                    * {
+                        background-color: $blackish !important; /* stylelint-disable-line declaration-no-important */
+                        color: $yellowbg !important; /* stylelint-disable-line declaration-no-important */
+                    }
+                    background-color: $blackish !important; /* stylelint-disable-line declaration-no-important */
+                    color: $yellowbg !important; /* stylelint-disable-line declaration-no-important */
+                }
+            }
+            .active * {
+                background-color: $blackish !important; /* stylelint-disable-line declaration-no-important */
+                color: $yellowbg !important; /* stylelint-disable-line declaration-no-important */
+            }
+            #region-main {
+                a {
+                    &:not(.dropdown-item) {
+                        border-bottom: solid 1px $blackish;
+                    }
+                }
+            }
+            .navbar {
+                border-bottom: solid 1px $blackish;
+            }
+            #gridshadebox_overlay {
+                background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
+            }
+            #gridshadebox_content {
+                .gridshadebox_area * {
+                    background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
+                }
+            }
+        }
+    }
+}

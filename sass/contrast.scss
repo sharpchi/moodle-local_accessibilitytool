@@ -1,0 +1,30 @@
+body {
+    &.at-contrast {
+        #region-main {
+            a {
+                text-decoration: none;
+                &:hover,
+                &:focus {
+                    * {
+                        border-bottom: none;
+                        text-decoration: none;
+                    }
+                    border-bottom: none;
+                    text-decoration: none;
+                }
+            }
+        }
+        &:not(.at-contrast-default) {
+            * {
+                border-radius: 0 !important; /* stylelint-disable-line declaration-no-important */
+                text-shadow: none !important; /* stylelint-disable-line declaration-no-important */
+            }
+            .dropdown-divider {
+                background-color: $white !important; /* stylelint-disable-line declaration-no-important */
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}

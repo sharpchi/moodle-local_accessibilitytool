@@ -1,2 +1,37 @@
 @import "comic";
 @import "mono";
+
+body {
+    &.at-font-modern {
+        :not(.fontstyle_default, .fa) {
+            font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+        h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
+            font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+    }
+    &.at-font-classic {
+        :not(.fontstyle_default, .fa) {
+            font-family: "Palatino", "Times New Roman", serif;
+        }
+        h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
+            font-family: "Palatino", "Times New Roman", serif;
+        }
+    }
+    &.at-font-comic {
+        :not(.fontstyle_default, .fa) {
+            font-family: "AT Comic", "Chalkboard", "Comic Sans", "Comic Sans MS", sans-serif;
+        }
+        h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
+            font-family: "AT Comic", "Chalkboard", "Comic Sans", "Comic Sans MS", sans-serif;
+        }
+    }
+    &.at-font-mono {
+        :not(.fontstyle_default, .fa) {
+            font-family: "AT Mono", "Menlo", "Courier New", monospace;
+        }
+        h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
+            font-family: "AT Mono", "Menlo", "Courier New", monospace;
+        }
+    }
+}

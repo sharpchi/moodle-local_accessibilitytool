@@ -41,9 +41,8 @@ if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) :
             $at_preference = get_user_preferences('accessibilitytool_gridformat');
             if (!empty($at_preference)) {
                 return format_section_renderer_base::print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused);
-            } else {
-                return format_grid_renderer::print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused);
             }
+            return format_grid_renderer::print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused);
         }
 
         /**

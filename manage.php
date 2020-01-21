@@ -25,6 +25,8 @@
 
 namespace local_accessibilitytool;
 
+use moodle_url;
+
 require_once("../../config.php");
 require_once("lib.php");
 require_once("locallib.php");
@@ -34,9 +36,30 @@ require_login();
 $PAGE->set_context(\context_system::instance());
 
 $renderer = $PAGE->get_renderer('local_accessibilitytool');
+$atr = optional_param("atr", "", PARAM_RAW);
+if ($atr == "") {
+    $urlparts = parse_url($_SERVER['HTTP_REFERER']);
+} else {
+    $urlparts = parse_url(urldecode($atr));
+}
+
+$queryparams = [];
+if (isset($urlparts['query'])) {
+    $queryparts = explode('&', $urlparts['query']);
+
+    foreach ($queryparts as $part) {
+        list($key, $val) = explode('=', $part);
+        $queryparams[$key] = $val;
+    }
+}
+
+$returnurl = new \moodle_url($urlparts['path'], $queryparams);
+
 $menu = new \local_accessibilitytool\output\menu();
+$menu->set_returnurl($returnurl);
 
 $section = optional_param("k", "", PARAM_ALPHA);
+
 if ($section !== "") {
     $value = required_param("v", PARAM_ALPHANUMEXT);
     $menu->set_user_preference($section, $value);

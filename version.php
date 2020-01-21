@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2018040301;
+$plugin->version = 2018040304;
 $plugin->requires = 2017111302;
 $plugin->component = "local_accessibilitytool";
 $plugin->maturity = MATURITY_STABLE;
