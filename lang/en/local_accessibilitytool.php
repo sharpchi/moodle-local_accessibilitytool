@@ -86,6 +86,7 @@ $string["privacy:metadata:preference:bold"] = "The boldness of text selected by 
 $string["privacy:metadata:preference:spacing"] = "The spacing between lines selected by the user.";
 $string["privacy:metadata:preference:size"] = "The text size selected by the user.";
 $string["privacy:metadata:preference:readtome"] = "The read-to-me setting selected by the user.";
+$string["privacy:metadata:preference:gridformat"] = 'The Flatten Gridformat settting selected by the user.';
 $string["privacy:request:preference:contrast"] = 'Contrast set to use: {$a->value}';
 $string["privacy:request:preference:stripstyles"] = 'Stripstyles set to use: {$a->value}';
 $string["privacy:request:preference:font"] = 'Font set to use: {$a->value}';
