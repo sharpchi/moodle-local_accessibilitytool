@@ -41,7 +41,7 @@ class menu implements renderable, templatable {
     protected $data;
 
     /** @var array $contrast_settings List of valid contrast settings. */
-    private $contrast_settings = ["default", "yb", "by", "wg", "br", "bb", "bw", "gb"];
+    private $contrast_settings = ["default", "yb", "by", "wg", "br", "bb", "bw", "gb", "bg"];
 
     /** @var array $binary_settings List of valid binary settings. */
     private $binary_settings = [0, 1];

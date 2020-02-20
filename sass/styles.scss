@@ -9,7 +9,8 @@ $white: #f6f6f6;
 $whiteish: #eee;
 $red: #eeb9b9;
 $blue: #b9d9ee;
-$green: #11d711;
+// $green: #11d711;
+$green: #32ff24;
 
 @import "fonts/fonts";
 @import "contrast";
@@ -20,6 +21,7 @@ $green: #11d711;
 @import "contrast-bb";
 @import "contrast-bw";
 @import "contrast-gb";
+@import "contrast-bg";
 
 body {
     &.at-bold {
@@ -76,6 +78,10 @@ body {
         &.contrast_gb {
             background-color: $black !important; /* stylelint-disable-line declaration-no-important */
             color: $green !important; /* stylelint-disable-line declaration-no-important */
+        }
+        &.contrast_bg {
+            background-color: $green !important; /* stylelint-disable-line declaration-no-important */
+            color: $black !important; /* stylelint-disable-line declaration-no-important */
         }
 
         &.fontstyle_modern {
