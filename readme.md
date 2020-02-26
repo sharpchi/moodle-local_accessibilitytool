@@ -37,3 +37,7 @@ The plugin is largely based on the excellent presentation made at Moodle MootIEU
 Alex Walker ([Github](https://github.com/lexxkoto) & [Twitter](https://twitter.com/lexx_koto)) of the University of Glasgow.
 
 The original version was strongly tied into their theme, whereas this version is more-or-less stand-alone - requiring a small change to your theme's lib.php file.
+
+## Contributers
+
+- [Michael Milette](https://github.com/michael-milette)
