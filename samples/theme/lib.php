@@ -23,8 +23,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot . "/local/accessibilitytool/lib.php");
-
 function theme_yourtheme_page_init(moodle_page $page) {
-    local_accessibilitytool_page_init($page);
+    global $CFG;
+    if (file_exists($CFG->dirroot . "/local/accessibilitytool/lib.php")) {
+        require_once($CFG->dirroot . "/local/accessibilitytool/lib.php");
+        local_accessibilitytool_page_init($page);
+    }
 }
