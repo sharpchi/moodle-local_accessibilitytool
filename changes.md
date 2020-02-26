@@ -1,6 +1,6 @@
 # Changes
 
-## 2018040309
+## 2020022600
 
 - Added Open Dyslexia font
 - Settings to manage which options are available to users:
