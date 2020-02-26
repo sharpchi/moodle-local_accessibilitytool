@@ -27,6 +27,17 @@ function theme_yourthemename_page_init(moodle_page $page) {
 }
 ```
 
+4.If you are using Grid Format you can optionally copy the following to your theme's `classes` folder (`classes/format_grid_renderer.php`).
+
+```php
+if (file_exists($CFG->dirroot . "/local/accessibilitytool/classes/format_grid_renderer.php")) :
+    require_once($CFG->dirroot . "/local/accessibilitytool/classes/format_grid_renderer.php");
+    class theme_yourtheme_format_grid_renderer extends local_accessibilitytool_format_grid_renderer {
+
+    }
+endif;
+```
+
 ### Theme developers
 
 Include the above function in your theme to have this plugin automatically supported once it is installed.
