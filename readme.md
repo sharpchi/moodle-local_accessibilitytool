@@ -27,7 +27,7 @@ function theme_yourthemename_page_init(moodle_page $page) {
 }
 ```
 
-4.If you are using Grid Format you can optionally copy the following to your theme's `classes` folder (`classes/format_grid_renderer.php`).
+4. If you are using Grid Format you can optionally copy the following to your theme's `classes` folder (`classes/format_grid_renderer.php`).
 
 ```php
 if (file_exists($CFG->dirroot . "/local/accessibilitytool/classes/format_grid_renderer.php")) :
