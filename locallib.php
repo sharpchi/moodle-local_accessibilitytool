@@ -54,11 +54,13 @@ function remove_usermenuitem() {
  * @param moodle_page $page Page object
  */
 function apply_settings(\moodle_page $page) {
-
+       
     $page->add_body_class('accessibilitytool');
     $extraclasses = [];
+    
+    $fontsettings = explode(',', get_config('local_accessibilitytool', 'fontstyle'));
     $font = get_user_preferences('accessibilitytool_font', "default");
-    if (in_array($font, ['modern', 'classic', 'comic', 'mono'])) {
+    if (in_array($font, $fontsettings)) {
         $extraclasses[] = 'at-font-' . $font;
     }
 
@@ -67,8 +69,9 @@ function apply_settings(\moodle_page $page) {
         $extraclasses[] = 'at-size-' . $size;
     }
 
+    $contrastsettings = explode(',', get_config('local_accessibilitytool', 'contrast'));
     $contrast = get_user_preferences('accessibilitytool_contrast', "default");
-    if (in_array($contrast, ['by', 'yb', 'wg', 'bb', 'br', 'bw', 'gb', 'bg'])) {
+    if (in_array($contrast, $contrastsettings)) {
         $extraclasses[] = 'at-contrast';
         $extraclasses[] = 'at-contrast-' . $contrast;
     }
@@ -83,10 +86,11 @@ function apply_settings(\moodle_page $page) {
         $extraclasses[] = 'at-spacing';
     }
 
-    $readtome = get_user_preferences('accessibilitytool_readtome', 0);
-    if ($readtome) {
-        $page->requires->js_call_amd('local_accessibilitytool/readtome', 'init');
-    }
+    // Currently disabled as not working.
+    // $readtome = get_user_preferences('accessibilitytool_readtome', 0);
+    // if ($readtome) {
+    //     $page->requires->js_call_amd('local_accessibilitytool/readtome', 'init');
+    // }
 
     $stripstyles = get_user_preferences('accessibilitytool_stripstyles', 0);
     if ($stripstyles) {

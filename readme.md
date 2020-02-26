@@ -24,7 +24,8 @@ function theme_yourthemename_page_init(moodle_page $page) {
 }
 ```
 
-### Theme Developers
+### Theme developers
+
 Include the above function in your theme to have this plugin automatically supported once it is installed.
 
 ## Credits

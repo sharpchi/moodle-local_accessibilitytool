@@ -1,4 +1,4 @@
-define(['jquery', 'core/str'], function($) {
+define(['jquery', 'core/str'], function($, M) {
     var readtome = {
         init: function() {
             if (typeof window.speechSynthesis !== 'undefined') {
@@ -7,12 +7,13 @@ define(['jquery', 'core/str'], function($) {
                         $(this).addClass('currentlySpeaking');
                         window.speechSynthesis.cancel();
                         var speakText = $(this).text();
-                        var speakTimer = setTimeout( function() {
+                        var speakTimer = setTimeout(function() {
                             var msg = new SpeechSynthesisUtterance(speakText);
                             msg.rate = 0.8;
-                            msg.lang = 'en-scottish';
+                            msg.lang = 'en-GB';
                             $(this).addClass('currentlySpeakingHighlight');
                             window.speechSynthesis.speak(msg);
+                            window.speechSynthesis.speak("What's up?");
                             $(this).removeClass('currentlySpeaking');
                         }, 1500);
                         if (typeof speakTimer !== 'undefined') {

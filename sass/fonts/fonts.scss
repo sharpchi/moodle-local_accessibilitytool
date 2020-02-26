@@ -1,5 +1,6 @@
 @import "comic";
 @import "mono";
+@import "opendyslexic";
 
 body {
     &.at-font-modern {
@@ -32,6 +33,14 @@ body {
         }
         h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
             font-family: "AT Mono", "Menlo", "Courier New", monospace;
+        }
+    }
+    &.at-font-opendyslexic {
+        :not(.fontstyle_default, .fa) {
+            font-family: "OpenDyslexic", sans-serif;
+        }
+        h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
+            font-family: "OpenDyslexic", sans-serif;
         }
     }
 }

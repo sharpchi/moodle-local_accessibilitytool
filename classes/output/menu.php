@@ -41,13 +41,13 @@ class menu implements renderable, templatable {
     protected $data;
 
     /** @var array $contrast_settings List of valid contrast settings. */
-    private $contrast_settings = ["default", "yb", "by", "wg", "br", "bb", "bw", "gb", "bg"];
+    private $contrast_settings = [];
 
     /** @var array $binary_settings List of valid binary settings. */
     private $binary_settings = [0, 1];
 
     /** @var array $font_settings List of valid font settings. */
-    private $font_settings = ["default", "modern", "classic", "comic", "mono"];
+    private $font_settings = [];
 
     /** @var array $size_settings List of valid font size settings. */
     private $size_settings = ["default", "large", "huge", "massive", "gigantic"];
@@ -60,6 +60,18 @@ class menu implements renderable, templatable {
      */
     public function __construct($data = null) {
         $this->data = new stdClass();
+        
+        $contrastSetting = get_config('local_accessibilitytool', 'contrast');
+        $contrast = !empty($contrastSetting) ? explode(',', $contrastSetting) : [];
+        if (count($contrast) > 0) {
+            $this->contrast_settings = array_merge(['default' => 'default'], $contrast);
+        }
+
+        $fontSetting = get_config('local_accessibilitytool', 'fontstyle');
+        $fonts = !empty($fontSetting) ? explode(',', $fontSetting) : [];
+        if (count($fonts) > 0) {
+            $this->font_settings = array_merge(['default' => 'default'], $fonts);
+        }
     }
 
     /**
@@ -70,8 +82,9 @@ class menu implements renderable, templatable {
      */
     public function export_for_template(renderer_base $output) {
         global $OUTPUT;
-        $plugin_settings = get_config("local_accessibilitytool");
-        $data = new stdClass();
+        $config = get_config("local_accessibilitytool");
+        $sm = get_string_manager();
+        $this->data->about = get_string('about', 'local_accessibilitytool');
         // Contrast
         $contrast = get_user_preferences("accessibilitytool_contrast", "default");
         $this->data->contrast = [];
@@ -85,20 +98,10 @@ class menu implements renderable, templatable {
             $item->text = get_string("contrast" . $setting, "local_accessibilitytool");
             $this->data->contrast[] = $item;
         }
-
-        $stripstyles = get_user_preferences("accessibilitytool_stripstyles", 0);
-        $this->data->stripstyles = [];
-        $item = new stdClass();
-        $item->key = "stripstyles";
-        $item->value = 1;
-        $item->icon = "fa-plus-square";
-        $item->text = get_string("stripstyleson", "local_accessibilitytool");
-        if ($stripstyles) {
-            $item->value = 0;
-            $item->icon = "fa-minus-square";
-            $item->text = get_string("stripstylesoff", "local_accessibilitytool");
+        $this->data->hasContrast = (count($this->data->contrast) > 0);
+        if ($this->data->hasContrast) {
+            $this->data->about .= get_string('about_colourscheme', 'local_accessibilitytool');
         }
-        $this->data->stripstyles[] = $item;
 
         $font = get_user_preferences("accessibilitytool_font", "default");
         $this->data->font = [];
@@ -112,9 +115,19 @@ class menu implements renderable, templatable {
             $item->selected = $selected;
             $this->data->font[] = $item;
         }
+        $this->data->hasFonts = (count($this->data->font) > 0);
+        if ($this->data->hasFonts) {
+            $this->data->about .= get_string('about_fonts', 'local_accessibilitytool');
+            foreach ($this->data->font as $f) {
+                if ($sm->string_exists('about_fonts_' . $f->value, 'local_accessibilitytool')) {
+                    $this->data->about .= get_string('about_fonts_' . $f->value, 'local_accessibilitytool');
+                }
+            }
+        }
 
-        $bold = get_user_preferences("accessibilitytool_bold", 0);
+        // Readability preferences.
         $this->data->readability = [];
+        $bold = get_user_preferences("accessibilitytool_bold", 0);
         $item = new stdClass();
         $item->key = "bold";
         $item->value = 1;
@@ -126,6 +139,7 @@ class menu implements renderable, templatable {
             $item->selected = true;
         }
         $this->data->readability[] = $item;
+        $this->data->about .= get_string('about_readability', 'local_accessibilitytool');
 
         $spacing = get_user_preferences("accessibilitytool_spacing", 0);
         $item = new stdClass();
@@ -140,6 +154,20 @@ class menu implements renderable, templatable {
         }
         $this->data->readability[] = $item;
 
+        $stripstyles = get_user_preferences("accessibilitytool_stripstyles", 0);
+        $item = new stdClass();
+        $item->key = "stripstyles";
+        $item->value = 1;
+        $item->icon = "fa-adjust";
+        $item->text = get_string("stripstyleson", "local_accessibilitytool");
+        $item->selected = false;
+        if ($stripstyles == 1) {
+            $item->value = 0;
+            $item->selected = true;
+        }
+        $this->data->readability[] = $item;
+        $this->data->about .= get_string('about_readability_stripstyles', 'local_accessibilitytool');
+
         $size = get_user_preferences("accessibilitytool_size", "default");
         $this->data->size = [];
         foreach ($this->size_settings as $setting) {
@@ -152,23 +180,52 @@ class menu implements renderable, templatable {
             $item->selected = $selected;
             $this->data->size[] = $item;
         }
-        if (isset($plugin_settings->readtome_enabled)) {
-            $this->data->readtome_enabled = $plugin_settings->readtome_enabled;
+
+        $this->data->about .= get_string('about_textsize', 'local_accessibilitytool');
+
+        $this->data->features = [];
+        if ($config->flattengridformat) {
+            $gridformat = get_user_preferences("accessibilitytool_gridformat", 0);
+            $item = new stdClass();
+            $item->key = "gridformat";
+            $item->value = 1;
+            $item->icon = "fa-columns"; //table
+            $item->text = get_string("gridformaton", "local_accessibilitytool");
+            $item->help = $OUTPUT->help_icon("gridformat", "local_accessibilitytool");
+            $item->selected = false;
+            if ($gridformat == 1) {
+                $item->value = 0;
+                $item->selected = true;
+            }
+            $this->data->features[] = $item;
+        }
+        // Currently disabled as not working.
+        // if ($config->readtome) {
+        //     $readtome = get_user_preferences('accessibilitytool_readtome', 0);
+        //     $item = new stdClass();
+        //     $item->key = 'readtome';
+        //     $item->value = 1;
+        //     $item->icon = "fa-assistive-listening-systems";
+        //     $item->text = get_string('readtomeon', 'local_accessibilitytool');
+        //     $item->help = get_string('readtome_help', 'local_accessibilitytool');
+        //     $item->selected = false;
+        //     if ($readtome) {
+        //         $item->value = 0;
+        //         $item->selected = true;
+        //     }
+        //     $this->data->features = $item;
+        // }
+
+        $this->data->hasFeatures = (count($this->data->features) > 0);
+        if ($this->data->hasFeatures) {
+            $this->data->about .= get_string('about_features', 'local_accessibilitytool');
+            foreach ($this->data->features as $f) {
+                if ($sm->string_exists('about_features_' . $f->key, 'local_accessibilitytool')) {
+                    $this->data->about .= get_string('about_features_' . $f->key, 'local_accessibilitytool');
+                }
+            }
         }
 
-        $gridformat = get_user_preferences("accessibilitytool_gridformat", 0);
-        $item = new stdClass();
-        $item->key = "gridformat";
-        $item->value = 1;
-        $item->icon = "fa-columns"; //table
-        $item->text = get_string("gridformaton", "local_accessibilitytool");
-        $item->help = $OUTPUT->help_icon("gridformat", "local_accessibilitytool");
-        $item->selected = false;
-        if ($gridformat == 1) {
-            $item->value = 0;
-            $item->selected = true;
-        }
-        $this->data->readability[] = $item;
         $this->data->returnurl = $this->returnurl;
         $this->data->atr = urlencode($this->returnurl);
         return $this->data;

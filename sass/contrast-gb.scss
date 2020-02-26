@@ -17,10 +17,16 @@ body {
                     color: $black !important; /* stylelint-disable-line declaration-no-important */
                 }
             }
-            .active * {
-                background-color: $green !important; /* stylelint-disable-line declaration-no-important */
-                color: $black !important; /* stylelint-disable-line declaration-no-important */
-            }
+            // .active * {
+            //     background-color: $green !important; /* stylelint-disable-line declaration-no-important */
+            //     color: $black !important; /* stylelint-disable-line declaration-no-important */
+            // }
+            // .tab-pane {
+            //     .active * {
+            //         background-color: $green !important; /* stylelint-disable-line declaration-no-important */
+            //         color: $black !important; /* stylelint-disable-line declaration-no-important */
+            //     }
+            // }
             #region-main {
                 a {
                     &:not(.dropdown-item) {
