@@ -42,6 +42,20 @@ endif;
 
 Include the above function in your theme to have this plugin automatically supported once it is installed.
 
+## Developers
+
+If you wish to contribute to this project, it should be noted that the CSS that is shipped is compiled from SASS files (see sass folder).
+
+In order to compile these files you will need to install nodejs on your development machine. Once you have done this, you will need to run the following command in the local\accessibilitytool directory:
+
+` $ npm install`
+
+This will install all the components you require. To compile the SASS files you can run the following command:
+
+` $ gulp`
+
+While this is running, whenever you save a SASS file, the new style sheet will be compiled.
+
 ## Credits
 
 The plugin is largely based on the excellent presentation made at Moodle MootIEUK18 by
