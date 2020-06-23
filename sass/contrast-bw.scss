@@ -39,6 +39,15 @@ body {
                     background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
                 }
             }
+            .block {
+                .minicalendar {
+                    td {
+                        &.weekend {
+                            color: $blackish !important; /* stylelint-disable-line declaration-no-important */
+                        }
+                    }
+                }
+            }
         }
     }
 }
