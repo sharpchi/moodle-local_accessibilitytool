@@ -80,7 +80,7 @@ $string['about_features_gridformat'] = '<h5>Grid format</h5>
     as if it didn\'t have Grid Format.</p>';
 
 /* Colour scheme */
-$string['colourscheme'] = "Colour Scheme";
+$string['colourscheme'] = "Colour scheme";
 $string['colourscheme_help'] = "Choose which colours are available to your users.";
 $string['contrastdefault'] = "Default Moodle theme";
 $string['contrastyb'] = "Yellow on Black theme";
@@ -94,7 +94,7 @@ $string['contrastbg'] = "Black on Green theme";
 
 
 /* Font style */
-$string['fontstyle'] = "Font Style";
+$string['fontstyle'] = "Font style";
 $string['fontstyle_help'] = "Choose which fonts are available to your users.";
 $string['fontdefault'] = "Default font";
 $string['fontmodern'] = "Modern font";
