@@ -32,29 +32,29 @@ body {
         line-height: 2rem;
     }
 
-    &.at-size-large {
-        font-size: 120%;
+    &.at-size-large,
+    &.at-size-huge,
+    &.at-size-massive,
+    &.at-size-gigantic {
         .dropdown-menu {
             font-size: inherit;
         }
+        .popover-region-content-container {
+            height: calc(100% - 70px);
+        }
+    }
+
+    &.at-size-large {
+        font-size: 120%;
     }
     &.at-size-huge {
         font-size: 140%;
-        .dropdown-menu {
-            font-size: inherit;
-        }
     }
     &.at-size-massive {
         font-size: 160%;
-        .dropdown-menu {
-            font-size: inherit;
-        }
     }
     &.at-size-gigantic {
         font-size: 180%;
-        .dropdown-menu {
-            font-size: inherit;
-        }
     }
 
     .at-setting {
