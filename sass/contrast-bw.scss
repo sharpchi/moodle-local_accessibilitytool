@@ -1,25 +1,42 @@
+/* stylelint-disable declaration-no-important */
+
 body {
     &.at-contrast {
         &.at-contrast-bw * {
-            background-color: $white !important; /* stylelint-disable-line declaration-no-important */
-            color: $blackish !important; /* stylelint-disable-line declaration-no-important */
-            border-color: $blackish !important; /* stylelint-disable-line declaration-no-important */
+            background-color: $white !important;
+            color: $blackish !important;
+            border-color: $blackish !important;
             a,
             .btn {
                 &:hover,
                 &:focus,
+                &:active,
                 &.active {
                     * {
-                        background-color: $blackish !important; /* stylelint-disable-line declaration-no-important */
-                        color: $white !important; /* stylelint-disable-line declaration-no-important */
+                        background-color: $blackish !important;
+                        color: $white !important;
                     }
-                    background-color: $blackish !important; /* stylelint-disable-line declaration-no-important */
-                    color: $white !important; /* stylelint-disable-line declaration-no-important */
+                    background-color: $blackish !important;
+                    color: $white !important;
                 }
             }
-            .active * {
-                background-color: $blackish !important; /* stylelint-disable-line declaration-no-important */
-                color: $white !important; /* stylelint-disable-line declaration-no-important */
+            .dropdown-item {
+                &:hover,
+                &:focus,
+                &:focus-within,
+                &:active {
+                    background-color: $blackish !important;
+                    color: $white !important;
+                    a,
+                    a i {
+                        background-color: $blackish !important;
+                        color: $white !important;
+                    }
+                }
+            }
+            .initialbar .active * {
+                background-color: $blackish !important;
+                color: $white !important;
             }
             #region-main {
                 a {
@@ -32,18 +49,18 @@ body {
                 border-bottom: solid 1px $blackish;
             }
             #gridshadebox_overlay {
-                background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
+                background-color: $grey !important;
             }
             #gridshadebox_content {
                 .gridshadebox_area * {
-                    background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
+                    background-color: $grey !important;
                 }
             }
             .block {
                 .minicalendar {
                     td {
                         &.weekend {
-                            color: $blackish !important; /* stylelint-disable-line declaration-no-important */
+                            color: $blackish !important;
                         }
                     }
                 }
