@@ -63,11 +63,11 @@ class provider implements \core_privacy\local\metadata\provider,
     /**
      * Store all user preferences for the plugin.
      *
-     * @param   int         $userid The userid of the user whose data is to be exported.
+     * @param int $userid The userid of the user whose data is to be exported.
      */
     public static function export_user_preferences(int $userid) {
         $preferences = get_user_preferences();
-        $accessibilitytool_params = [
+        $accessibilitytoolparams = [
             "accessibilitytool_contrast",
             "accessibilitytool_stripstyles",
             "accessibilitytool_font",
@@ -78,13 +78,13 @@ class provider implements \core_privacy\local\metadata\provider,
             "accessibilitytool_gridformat"];
         foreach ($preferences as $name => $value) {
             $descriptionidentifier = null;
-            if (!in_array($name, $accessibilitytool_params)) {
+            if (!in_array($name, $accessibilitytoolparams)) {
                 continue;
             }
-            $param_name = str_replace("accessibilitytool_", "", $name);
-            $descriptionidentifier = "privacy:request:preference:" . $param_name;
+            $paramname = str_replace("accessibilitytool_", "", $name);
+            $descriptionidentifier = "privacy:request:preference:" . $paramname;
             $v = ($value === 1) ? "on" : $value;
-            $selected_value = get_string($param_name . $v, "local_accessibilitytool");
+            $selectedvalue = get_string($paramname . $v, "local_accessibilitytool");
             writer::export_user_preference(
                 "local_accessibilitytool",
                 $name,
@@ -92,12 +92,10 @@ class provider implements \core_privacy\local\metadata\provider,
                 get_string($descriptionidentifier,
                     "local_accessibilitytool",
                     (object) [
-                        "value" => $selected_value
+                        "value" => $selectedvalue
                     ]
                 )
             );
         }
-
     }
-
 }

@@ -86,12 +86,6 @@ function apply_settings(\moodle_page $page) {
         $extraclasses[] = 'at-spacing';
     }
 
-    // Currently disabled as not working.
-    // $readtome = get_user_preferences('accessibilitytool_readtome', 0);
-    // if ($readtome) {
-    //     $page->requires->js_call_amd('local_accessibilitytool/readtome', 'init');
-    // }
-
     $stripstyles = get_user_preferences('accessibilitytool_stripstyles', 0);
     if ($stripstyles) {
         $page->requires->js_call_amd('local_accessibilitytool/stripstyles', 'init');

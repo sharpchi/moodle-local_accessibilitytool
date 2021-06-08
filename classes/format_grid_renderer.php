@@ -43,9 +43,10 @@ if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) :
          * @param array $modnamesused
          */
         public function print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused) {
-            $at_preference = get_user_preferences('accessibilitytool_gridformat');
-            if (!empty($at_preference)) {
-                return format_section_renderer_base::print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused);
+            $atpreference = get_user_preferences('accessibilitytool_gridformat');
+            if (!empty($atpreference)) {
+                return
+                    format_section_renderer_base::print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused);
             }
             return format_grid_renderer::print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused);
         }
@@ -55,8 +56,8 @@ if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) :
          * @return string HTML to output.
          */
         protected function start_section_list() {
-            $at_preference = get_user_preferences('accessibilitytool_gridformat');
-            if (!empty($at_preference)) {
+            $atpreference = get_user_preferences('accessibilitytool_gridformat');
+            if (!empty($atpreference)) {
                 return html_writer::start_tag('ul', array('class' => 'topics'));
             }
             return format_grid_renderer::start_section_list();
