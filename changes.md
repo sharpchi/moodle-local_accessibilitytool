@@ -1,5 +1,9 @@
 # Changes
 
+## 2021060800
+
+- PHPCS, PHPDOC, package.json, JS Linting fixes.
+- Compatibility with Boost in M3.9
 ## 2020022600
 
 - Added Open Dyslexia font
