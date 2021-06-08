@@ -15,9 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Allows overriding grid format renderer by accessibilitytool. Add this to your theme's classes dir.
+ *
  * @package   theme_yourtheme
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
- * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
+ * @copyright 2018 University of Chichester {@link https://www.chi.ac.uk}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -25,6 +27,9 @@ defined('MOODLE_INTERNAL') || die();
 
 if (file_exists($CFG->dirroot . "/local/accessibilitytool/classes/format_grid_renderer.php")) :
     require_once($CFG->dirroot . "/local/accessibilitytool/classes/format_grid_renderer.php");
+    /**
+     *  Override format_grid. Change classname to match your theme.
+     */
     class theme_yourtheme_format_grid_renderer extends local_accessibilitytool_format_grid_renderer {
 
     }

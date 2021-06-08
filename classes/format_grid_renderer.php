@@ -15,9 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Grid_renderer extender - allows disabling Grid format on a user basis. Defaults to topics.
+ *
  * @package   local_accessibilitytool
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
- * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
+ * @copyright 2018 University of Chichester {@link https://www.chi.ac.uk}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -26,6 +28,9 @@ defined('MOODLE_INTERNAL') || die();
 if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) :
     include_once($CFG->dirroot . "/course/format/grid/renderer.php");
 
+    /**
+     * Grid format renderer class.
+     */
     class local_accessibilitytool_format_grid_renderer extends format_grid_renderer {
 
         /**

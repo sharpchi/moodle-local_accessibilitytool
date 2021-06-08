@@ -19,7 +19,7 @@
  *
  * @package   local_accessibilitytool
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
- * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
+ * @copyright 2018 University of Chichester {@link https://www.chi.ac.uk}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -54,10 +54,10 @@ function remove_usermenuitem() {
  * @param moodle_page $page Page object
  */
 function apply_settings(\moodle_page $page) {
-       
+
     $page->add_body_class('accessibilitytool');
     $extraclasses = [];
-    
+
     $fontsettings = explode(',', get_config('local_accessibilitytool', 'fontstyle'));
     $font = get_user_preferences('accessibilitytool_font', "default");
     if (in_array($font, $fontsettings)) {

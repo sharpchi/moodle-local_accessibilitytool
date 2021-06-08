@@ -15,14 +15,22 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Sample theme lib file. Add to your theme and change the function name to fit your theme.
+ *
  * @package   theme_yourtheme
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
- * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
+ * @copyright 2018 University of Chichester {@link https://www.chi.ac.uk}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Page_init called just before displaying page to allow accessibilitytool to change the theme.
+ *
+ * @param moodle_page $page
+ * @return void
+ */
 function theme_yourtheme_page_init(moodle_page $page) {
     global $CFG;
     if (file_exists($CFG->dirroot . "/local/accessibilitytool/lib.php")) {

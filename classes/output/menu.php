@@ -16,9 +16,10 @@
 
 /**
  * Menu rendererable page.
+ *
  * @package   local_accessibilitytool
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
- * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
+ * @copyright 2018 University of Chichester {@link https://www.chi.ac.uk}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -52,7 +53,13 @@ class menu implements renderable, templatable {
     /** @var array $size_settings List of valid font size settings. */
     private $size_settings = ["default", "large", "huge", "massive", "gigantic"];
 
+    /**
+     * Return url for the return button on the settings page
+     *
+     * @var string
+     */
     private $returnurl;
+
     /**
      * Construct this renderable.
      *
@@ -60,7 +67,7 @@ class menu implements renderable, templatable {
      */
     public function __construct($data = null) {
         $this->data = new stdClass();
-        
+
         $contrastSetting = get_config('local_accessibilitytool', 'contrast');
         $contrast = !empty($contrastSetting) ? explode(',', $contrastSetting) : [];
         if (count($contrast) > 0) {
@@ -274,6 +281,12 @@ class menu implements renderable, templatable {
 
     }
 
+    /**
+     * Takes a moodle_url and sets returnurl to its string.
+     *
+     * @param moodle_url $returnurl
+     * @return null
+     */
     public function set_returnurl(moodle_url $returnurl) {
         $this->returnurl = $returnurl->out();
     }

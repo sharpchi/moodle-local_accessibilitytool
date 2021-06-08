@@ -15,9 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Language strings for local_accessibilitytool
+ *
  * @package   local_accessibilitytool
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
- * @copyright 2018 University of Chichester {@link www.chi.ac.uk}
+ * @copyright 2018 University of Chichester {@link https://www.chi.ac.uk}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -61,7 +63,7 @@ $string['about_readability'] = '<h4>Readability</h4>
     <p>Making the text bolder may help increase the contrast between the font and background colours.</p>
     <p>Increasing the space between lines may help you scan the page more easily.</p>';
 $string['about_readability_stripstyles'] = '<h5>Strip styles</h5>
-    <p>Sometimes your teacher might add their own styles to the content, or they copy in some text from another web page that contains extra 
+    <p>Sometimes your teacher might add their own styles to the content, or they copy in some text from another web page that contains extra
     style information.</p>
     <p>By stripping styles you can improve the consistency of the page content.</p>
     <h6>Example</h6>
