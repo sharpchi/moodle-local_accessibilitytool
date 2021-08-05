@@ -2,7 +2,7 @@
 const { src, dest, watch, series } = require('gulp');
 const notify = require('gulp-notify');
 const cleanCss = require('gulp-clean-css');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'))
 const sourcemaps = require('gulp-sourcemaps');
 
 function sassy() {
