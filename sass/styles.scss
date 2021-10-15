@@ -17,6 +17,7 @@ $green: #32ff24;
 @import "contrast-yb";
 @import "contrast-by";
 @import "contrast-wg";
+@import "contrast-wb";
 @import "contrast-br";
 @import "contrast-bb";
 @import "contrast-bw";
@@ -73,6 +74,10 @@ body {
         }
         &.contrast_wg {
             background-color: $grey !important; /* stylelint-disable-line declaration-no-important */
+            color: $whiteish !important; /* stylelint-disable-line declaration-no-important */
+        }
+        &.contrast_wb {
+            background-color: $black !important; /* stylelint-disable-line declaration-no-important */
             color: $whiteish !important; /* stylelint-disable-line declaration-no-important */
         }
         &.contrast_br {

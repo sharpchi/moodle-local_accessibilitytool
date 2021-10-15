@@ -36,6 +36,7 @@ if ($hassiteconfig) {
         "bw" => new lang_string('contrastbw', 'local_accessibilitytool'),
         "by" => new lang_string('contrastby', 'local_accessibilitytool'),
         "gb" => new lang_string('contrastgb', 'local_accessibilitytool'),
+        "wb" => new lang_string('contrastwb', 'local_accessibilitytool'),
         "wg" => new lang_string('contrastwg', 'local_accessibilitytool'),
         "yb" => new lang_string('contrastyb', 'local_accessibilitytool')
     ];

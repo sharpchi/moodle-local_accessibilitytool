@@ -90,6 +90,7 @@ $string['contrastdefault'] = "Default Moodle theme";
 $string['contrastyb'] = "Yellow on Black theme";
 $string['contrastby'] = "Black on Yellow theme";
 $string['contrastwg'] = "White on Grey theme";
+$string['contrastwb'] = "White on Black theme";
 $string['contrastbr'] = "Black on Red theme";
 $string['contrastbb'] = "Black on Blue theme";
 $string['contrastbw'] = "Black on White theme";
