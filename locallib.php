@@ -25,8 +25,6 @@
 
 namespace local_accessibilitytool;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Adds user menu item if not already present.
  */

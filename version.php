@@ -32,5 +32,5 @@ $plugin->requires = 2020061500;
 $plugin->component = "local_accessibilitytool";
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = [
-    'theme_boost' => 2020061500
+    'theme_boost' => 2020061500,
 ];

@@ -24,10 +24,9 @@
  */
 
 namespace local_accessibilitytool\privacy;
-use \core_privacy\local\metadata\collection;
-use \core_privacy\local\request\writer;
+use core_privacy\local\metadata\collection;
+use core_privacy\local\request\writer;
 
-defined('MOODLE_INTERNAL') || die();
 /**
  * Implmentation of provider class.
  */
@@ -75,7 +74,8 @@ class provider implements \core_privacy\local\metadata\provider,
             "accessibilitytool_spacing",
             "accessibilitytool_size",
             "accessibilitytool_readtome",
-            "accessibilitytool_gridformat"];
+            "accessibilitytool_gridformat",
+        ];
         foreach ($preferences as $name => $value) {
             $descriptionidentifier = null;
             if (!in_array($name, $accessibilitytoolparams)) {
@@ -92,7 +92,7 @@ class provider implements \core_privacy\local\metadata\provider,
                 get_string($descriptionidentifier,
                     "local_accessibilitytool",
                     (object) [
-                        "value" => $selectedvalue
+                        "value" => $selectedvalue,
                     ]
                 )
             );

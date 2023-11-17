@@ -42,7 +42,7 @@ function local_accessibilitytool_page_init(moodle_page $page) {
  */
 function local_accessibilitytool_get_fontawesome_icon_map() {
     return [
-        'core:t/../e/accessibility_checker' => 'fa-universal-access'
+        'core:t/../e/accessibility_checker' => 'fa-universal-access',
     ];
 }
 

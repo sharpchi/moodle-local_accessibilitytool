@@ -37,7 +37,7 @@ if ($hassiteconfig) {
         "by" => new lang_string('contrastby', 'local_accessibilitytool'),
         "gb" => new lang_string('contrastgb', 'local_accessibilitytool'),
         "wg" => new lang_string('contrastwg', 'local_accessibilitytool'),
-        "yb" => new lang_string('contrastyb', 'local_accessibilitytool')
+        "yb" => new lang_string('contrastyb', 'local_accessibilitytool'),
     ];
 
     $name = new lang_string('colourscheme', 'local_accessibilitytool');
@@ -52,7 +52,7 @@ if ($hassiteconfig) {
         "comic" => new lang_string('fontcomic', 'local_accessibilitytool'),
         "modern" => new lang_string('fontmodern', 'local_accessibilitytool'),
         "mono" => new lang_string('fontmono', 'local_accessibilitytool'),
-        "opendyslexic" => new lang_string('fontopendyslexic', 'local_accessibilitytool')
+        "opendyslexic" => new lang_string('fontopendyslexic', 'local_accessibilitytool'),
     ];
 
     $name = new lang_string('fontstyle', 'local_accessibilitytool');

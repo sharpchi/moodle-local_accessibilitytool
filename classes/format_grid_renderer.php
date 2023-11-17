@@ -58,7 +58,7 @@ if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) :
         protected function start_section_list() {
             $atpreference = get_user_preferences('accessibilitytool_gridformat');
             if (!empty($atpreference)) {
-                return html_writer::start_tag('ul', array('class' => 'topics'));
+                return html_writer::start_tag('ul', ['class' => 'topics']);
             }
             return format_grid_renderer::start_section_list();
         }

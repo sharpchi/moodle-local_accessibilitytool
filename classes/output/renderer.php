@@ -27,8 +27,6 @@ namespace local_accessibilitytool\output;
 use renderer_base;
 use stdClass;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Renderer class for local_accessibilitytool.
  */
