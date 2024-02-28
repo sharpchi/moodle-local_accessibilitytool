@@ -8,7 +8,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12
+        image: postgres:13
         env:
           POSTGRES_USER: 'postgres'
           POSTGRES_HOST_AUTH_METHOD: 'trust'
@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: plugin
 
@@ -58,7 +58,7 @@ jobs:
 
       - name: Initialise moodle-plugin-ci
         run: |
-          composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^3
+          composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^4
           echo $(cd ci/bin; pwd) >> $GITHUB_PATH
           echo $(cd ci/vendor/bin; pwd) >> $GITHUB_PATH
           sudo locale-gen en_AU.UTF-8
@@ -74,48 +74,46 @@ jobs:
           IGNORE_NAMES: 'styles.css'
 
       - name: PHP Lint
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
         run: moodle-plugin-ci phplint
-
-      - name: PHP Copy/Paste Detector
-        continue-on-error: true # This step will show errors but will not fail
-        if: ${{ always() }}
-        run: moodle-plugin-ci phpcpd
 
       - name: PHP Mess Detector
         continue-on-error: true # This step will show errors but will not fail
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
         run: moodle-plugin-ci phpmd
 
       - name: Moodle Code Checker
-        if: ${{ always() }}
-        run: moodle-plugin-ci codechecker --max-warnings 0
+        if: ${{ !cancelled() }}
+        run: moodle-plugin-ci phpcs --max-warnings 0
 
       - name: Moodle PHPDoc Checker
-        if: ${{ always() }}
-        run: moodle-plugin-ci phpdoc
+        if: ${{ !cancelled() }}
+        run: moodle-plugin-ci phpdoc --max-warnings 0
 
       - name: Validating
-        continue-on-error: true # The table name is not what it should be. Change it some time.
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
         run: moodle-plugin-ci validate
 
       - name: Check upgrade savepoints
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
         run: moodle-plugin-ci savepoints
 
       - name: Mustache Lint
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
         run: moodle-plugin-ci mustache
 
       - name: Grunt
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
         run: moodle-plugin-ci grunt --max-lint-warnings 0
 
       - name: PHPUnit tests
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
         run: moodle-plugin-ci phpunit --fail-on-warning
 
       - name: Behat features
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
         run: moodle-plugin-ci behat --profile chrome
+
+      - name: Mark cancelled jobs as failed.
+        if: ${{ cancelled() }}
+        run: exit 1
