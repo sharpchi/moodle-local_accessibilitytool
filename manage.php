@@ -36,6 +36,7 @@ require_login();
 $PAGE->set_context(\context_system::instance());
 
 $renderer = $PAGE->get_renderer('local_accessibilitytool');
+$reset = optional_param("reset", 0, PARAM_INT);
 $atr = optional_param("atr", "", PARAM_RAW);
 if ($atr == "") {
     $urlparts = parse_url($_SERVER['HTTP_REFERER']);
@@ -51,6 +52,11 @@ if (isset($urlparts['query'])) {
         list($key, $val) = explode('=', $part);
         $queryparams[$key] = $val;
     }
+}
+
+if ($reset == 1) {
+    // Reset preferences
+    reset_accesibilitytool_preferences();
 }
 
 $returnurl = new \moodle_url($urlparts['path'], $queryparams);

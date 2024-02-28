@@ -92,3 +92,19 @@ function apply_settings(\moodle_page $page) {
     $page->add_body_classes($extraclasses);
 
 }
+
+function reset_accesibilitytool_preferences() {
+    $keys = [
+        'contrast',
+        'stripstyles',
+        'bold',
+        'spacing',
+        'readtome',
+        'gridformat',
+        'font',
+        'size'
+    ];
+    foreach ($keys as $key) {
+        unset_user_preference("accessibilitytool_" . $key);
+    }
+}

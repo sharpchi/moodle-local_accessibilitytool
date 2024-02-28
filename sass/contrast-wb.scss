@@ -1,0 +1,70 @@
+/* stylelint-disable declaration-no-important */
+
+body {
+    &.at-contrast {
+        &.at-contrast-wb * {
+            background-color: $black !important;
+            color: $whiteish !important;
+            border-color: $whiteish !important;
+            a,
+            .btn {
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    * {
+                        background-color: $whiteish !important;
+                        color: $black !important;
+                    }
+                    background-color: $whiteish !important;
+                    color: $black !important;
+                }
+            }
+            .dropdown-item {
+                &:hover,
+                &:focus,
+                &:focus-within,
+                &:active {
+                    background-color: $whiteish !important;
+                    color: $black !important;
+                    a,
+                    a i {
+                        background-color: $whiteish !important;
+                        color: $black !important;
+                    }
+                }
+            }
+            .initialbar .active * {
+                background-color: $whiteish !important;
+                color: $black !important;
+            }
+            #region-main {
+                a {
+                    &:not(.dropdown-item) {
+                        border-bottom: solid 1px $whiteish;
+                    }
+                }
+            }
+            .navbar {
+                border-bottom: solid 1px $whiteish;
+            }
+            #gridshadebox_overlay {
+                background-color: $black !important;
+            }
+            #gridshadebox_content {
+                .gridshadebox_area * {
+                    background-color: $black !important;
+                }
+            }
+            .block {
+                .minicalendar {
+                    td {
+                        &.weekend {
+                            color: $whiteish !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
