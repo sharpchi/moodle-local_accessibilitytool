@@ -5,6 +5,8 @@
 - Fix: Embedded videos being blanked
 - Fix: File picker images blanked
 - Fix: M4 Activity icons blanked
+- Fix: Autocomplete hover state
+- Fix: Placeholder contrast
 
 ## 2021060800
 
