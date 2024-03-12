@@ -43,7 +43,7 @@ body {
                     }
                 }
             }
-            .dropdown-item {
+            .dropdown-item, .form-autocomplete-suggestions li {
                 &:hover,
                 &:focus,
                 &:focus-within,
