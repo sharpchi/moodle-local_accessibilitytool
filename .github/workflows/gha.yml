@@ -101,7 +101,7 @@ jobs:
 
       - name: Grunt
         if: ${{ !cancelled() }}
-        run: moodle-plugin-ci --show-lint-warnings
+        run: moodle-plugin-ci grunt --show-lint-warnings
 
       - name: PHPUnit tests
         if: ${{ !cancelled() }}
