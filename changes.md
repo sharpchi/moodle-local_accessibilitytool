@@ -1,9 +1,16 @@
 # Changes
 
+## 2024031200
+
+- Fix: Embedded videos being blanked
+- Fix: File picker images blanked
+- Fix: M4 Activity icons blanked
+
 ## 2021060800
 
 - PHPCS, PHPDOC, package.json, JS Linting fixes.
 - Compatibility with Boost in M3.9
+
 ## 2020022600
 
 - Added Open Dyslexia font

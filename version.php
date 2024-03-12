@@ -27,10 +27,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2021060800;
-$plugin->requires = 2020061500;
+$plugin->version = 2024031200;
+$plugin->requires = 2022041900;
 $plugin->component = "local_accessibilitytool";
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = [
-    'theme_boost' => 2020061500,
+    'theme_boost' => 2022041900,
 ];
