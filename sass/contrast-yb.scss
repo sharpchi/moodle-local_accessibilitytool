@@ -8,6 +8,11 @@ body {
                 color: $yellow !important;
                 border-color: $yellow !important;
             }
+            .form-control {
+                &::placeholder {
+                    color: lighten($yellow, 10%);
+                }
+            }
             .mediaplugin :not(.vjs-control-bar) {
                 background-color: rgba(0, 0, 0, 0) !important;
                 .vjs-control-bar,
