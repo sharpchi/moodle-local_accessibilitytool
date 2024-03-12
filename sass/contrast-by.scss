@@ -3,21 +3,40 @@
 body {
     &.at-contrast {
         &.at-contrast-by * {
-            background-color: $yellowbg !important;
-            color: $blackish !important;
-            border-color: $blackish !important;
+            &:not(.activityiconcontainer, .activityicon, .icon) {
+                background-color: $yellowbg !important;
+                color: $blackish !important;
+                border-color: $blackish !important;
+            }
+            .mediaplugin :not(.vjs-control-bar) {
+                background-color: rgba($yellowbg, 0) !important;
+                .vjs-control-bar,
+                .vjs-big-play-button {
+                    background-color: rgba($yellowbg, .75) !important;
+                    color: $yellowbg !important;
+                    &:hover,
+                    &:focus {
+                        background-color: rgba($yellowbg, .50) !important;
+                    }
+                }
+                .vjs-play-progress {
+                    background-color: $blackish !important;
+                }
+            }
             a,
             .btn {
                 &:hover,
                 &:focus,
                 &:active,
                 &.active {
-                    * {
+                    &:not(.fp-file, .card) {
+                        * {
+                            background-color: $blackish !important;
+                            color: $yellowbg !important;
+                        }
                         background-color: $blackish !important;
                         color: $yellowbg !important;
                     }
-                    background-color: $blackish !important;
-                    color: $yellowbg !important;
                 }
             }
             .dropdown-item {

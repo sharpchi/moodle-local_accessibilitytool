@@ -26,5 +26,38 @@ body {
                 text-decoration: none;
             }
         }
+        .block-recentlyaccesseditems {
+            a {
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    :not(.activityiconcontainer) {
+                        background: none !important;
+                        .administration {
+                            background-color: var(--activityadministration) !important;
+                        }
+                        .assessment {
+                            background-color: var(--activityassessment) !important;
+                        }
+                        .collaboration {
+                            background-color: var(--activitycollaboration) !important;
+                        }
+                        .communication {
+                            background-color: var(--activitycommunication) !important;
+                        }
+                        .content {
+                            background-color: var(--activitycontent) !important;
+                        }
+                        .interface {
+                            background-color: var(--activityinterface) !important;
+                        }
+                    }
+                }
+            }
+        }
+        .filepicker a.fp-file * {
+            background: none !important;
+        }
     }
 }

@@ -3,21 +3,39 @@
 body {
     &.at-contrast {
         &.at-contrast-wg * {
-            background-color: $grey !important;
-            color: $whiteish !important;
-            border-color: $whiteish !important;
+            &:not(.activityiconcontainer, .activityicon, .icon) {
+                background-color: $grey !important;
+                color: $whiteish !important;
+                border-color: $whiteish !important;
+            }
+            .mediaplugin :not(.vjs-control-bar) {
+                background-color: rgba(0, 0, 0, 0) !important;
+                .vjs-control-bar,
+                .vjs-big-play-button {
+                    background-color: rgba(0, 0, 0, .50) !important;
+                    &:hover,
+                    &:focus {
+                        background-color: rgba(0, 0, 0, .25) !important;
+                    }
+                }
+                .vjs-play-progress {
+                    background-color: $grey !important;
+                }
+            }
             a,
             .btn {
                 &:hover,
                 &:focus,
                 &:active,
                 &.active {
-                    * {
+                    &:not(.fp-file, .card) {
+                        * {
+                            background-color: $whiteish !important;
+                            color: $grey !important;
+                        }
                         background-color: $whiteish !important;
                         color: $grey !important;
                     }
-                    background-color: $whiteish !important;
-                    color: $grey !important;
                 }
             }
             .dropdown-item {
