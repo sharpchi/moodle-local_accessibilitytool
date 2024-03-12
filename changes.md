@@ -8,6 +8,7 @@
 - Fix: Autocomplete hover state
 - Fix: Placeholder contrast
 - Feature: Contrast dialogue backgrounds
+- Fix: Atto icons after icon fix
 
 ## 2021060800
 

@@ -30,6 +30,12 @@ body {
                     background-color: $grey !important;
                 }
             }
+            /** This is required to reverse .icon used above **/
+            .editor_atto_toolbar * {
+                background-color: $grey !important;
+                color: $whiteish !important;
+                border-color: $whiteish !important;
+            }
             a,
             .btn {
                 &:hover,
