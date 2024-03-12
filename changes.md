@@ -7,6 +7,7 @@
 - Fix: M4 Activity icons blanked
 - Fix: Autocomplete hover state
 - Fix: Placeholder contrast
+- Feature: Contrast dialogue backgrounds
 
 ## 2021060800
 

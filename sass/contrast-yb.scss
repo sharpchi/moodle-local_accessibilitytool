@@ -8,6 +8,9 @@ body {
                 color: $yellow !important;
                 border-color: $yellow !important;
             }
+            .moodle-dialogue-wrap * {
+                background-color: lighten($black, 10%) !important;
+            }
             .form-control {
                 &::placeholder {
                     color: lighten($yellow, 10%);
