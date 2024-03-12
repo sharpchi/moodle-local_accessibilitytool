@@ -36,6 +36,11 @@ body {
                 color: $blackish !important;
                 border-color: $blackish !important;
             }
+            .maincalendar .calendarmonth td.today .day-number-circle * {
+                background-color: $blackish !important;
+                color: $blue !important;
+                border-radius: 50% !important;
+            }
             a,
             .btn {
                 &:hover,
@@ -86,15 +91,6 @@ body {
             #gridshadebox_content {
                 .gridshadebox_area * {
                     background-color: $grey !important;
-                }
-            }
-            .block {
-                .minicalendar {
-                    td {
-                        &.weekend {
-                            color: $blackish !important;
-                        }
-                    }
                 }
             }
         }

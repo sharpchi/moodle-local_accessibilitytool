@@ -36,6 +36,11 @@ body {
                 color: $whiteish !important;
                 border-color: $whiteish !important;
             }
+            .maincalendar .calendarmonth td.today .day-number-circle * {
+                background-color: $whiteish !important;
+                color: $grey !important;
+                border-radius: 50% !important;
+            }
             a,
             .btn {
                 &:hover,

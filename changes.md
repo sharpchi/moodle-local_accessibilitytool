@@ -9,6 +9,7 @@
 - Fix: Placeholder contrast
 - Feature: Contrast dialogue backgrounds
 - Fix: Atto icons after icon fix
+- Fix: Calendar highlight correctly
 
 ## 2021060800
 
