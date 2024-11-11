@@ -101,7 +101,7 @@ jobs:
 
       - name: Grunt
         if: ${{ !cancelled() }}
-        run: moodle-plugin-ci grunt -t amd -t gherkinlint -t stylelint:scss
+        run: moodle-plugin-ci grunt -t amd -t gherkinlint -t stylelint
 
       - name: PHPUnit tests
         if: ${{ !cancelled() }}
