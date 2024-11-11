@@ -37,8 +37,13 @@ $PAGE->set_context(\context_system::instance());
 
 $renderer = $PAGE->get_renderer('local_accessibilitytool');
 $atr = optional_param("atr", "", PARAM_RAW);
+$urlparts = [];
 if ($atr == "") {
-    $urlparts = parse_url($_SERVER['HTTP_REFERER']);
+    if (isset($_SERVER['HTTP_REFERER'])) {
+        $urlparts = parse_url($_SERVER['HTTP_REFERER']);
+    } else {
+        $urlparts = parse_url($CFG->wwwroot . '/local/accessibilitytool/manage.php');
+    }
 } else {
     $urlparts = parse_url(urldecode($atr));
 }
