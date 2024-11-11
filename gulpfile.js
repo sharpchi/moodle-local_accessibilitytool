@@ -6,7 +6,7 @@ const sass = require('gulp-sass')(require('sass'))
 const sourcemaps = require('gulp-sourcemaps');
 
 function sassy() {
-    return src('./sass/styles.scss')
+    return src('./scss/styles.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCss())
@@ -16,7 +16,7 @@ function sassy() {
 }
 
 function watchme() {
-    watch('./sass/**/*.scss', series(sassy));
+    watch('./scss/**/*.scss', series(sassy));
 }
 
 exports.default = watchme;
