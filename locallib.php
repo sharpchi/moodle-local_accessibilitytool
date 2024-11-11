@@ -34,7 +34,7 @@ function add_usermenuitem() {
         return;
     }
 
-    $linetoadd = "accessibilitytool,local_accessibilitytool|/local/accessibilitytool/manage.php|../e/accessibility_checker\n";
+    $linetoadd = "accessibilitytool,local_accessibilitytool|/local/accessibilitytool/manage.php\n";
     $menuitems = $linetoadd . $menuitems;
     set_config('customusermenuitems', $menuitems);
 }
