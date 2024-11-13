@@ -14,9 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_accessibilitytool;
+namespace local_accessibilitytool\local\hooks;
 
-use core_user\hook\extend_user_menu;
 use stdClass;
 
 /**
@@ -26,14 +25,14 @@ use stdClass;
  * @copyright  2024 Southampton Solent University {@link https://www.solent.ac.uk}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class hook_callbacks {
+class extend_user_menu {
     /**
      * Extend user menu with accessibility tool.
      *
      * @param extend_user_menu $hook
      * @return void
      */
-    public static function extend_user_menu(extend_user_menu $hook): void {
+    public static function callback(\core_user\hook\extend_user_menu $hook): void {
         $enabled = get_config('local_accessibilitytool', 'enable');
         if (!$enabled) {
             return;

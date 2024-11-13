@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 $callbacks = [
     [
         'hook' => core_user\hook\extend_user_menu::class,
-        'callback' => '\local_accessibilitytool\hook_callbacks::extend_user_menu',
+        'callback' => [\local_accessibilitytool\local\hooks\extend_user_menu::class, 'callback'],
         'priority' => 0,
     ],
     [
