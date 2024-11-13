@@ -31,7 +31,4 @@ $plugin->version = 2024111200;
 $plugin->requires = 2024100700;
 $plugin->component = "local_accessibilitytool";
 $plugin->maturity = MATURITY_STABLE;
-$plugin->dependencies = [
-    'theme_boost' => 2022041900,
-];
 $plugin->supported = [405, 500];

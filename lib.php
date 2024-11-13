@@ -31,9 +31,11 @@ require_once($CFG->dirroot . "/local/accessibilitytool/locallib.php");
  * Called by theme's page_init function to set classes and load scripts.
  *
  * @param moodle_page $page Main page object.
+ * @deprecated 2024111200
  */
 function local_accessibilitytool_page_init(moodle_page $page) {
-    \local_accessibilitytool\apply_settings($page);
+    // This is not longer required, but retained in case theme calls.
+    return;
 }
 
 /**

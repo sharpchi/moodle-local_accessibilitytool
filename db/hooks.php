@@ -29,5 +29,9 @@ $callbacks = [
         'hook' => core_user\hook\extend_user_menu::class,
         'callback' => '\local_accessibilitytool\hook_callbacks::extend_user_menu',
         'priority' => 0,
-    ]
+    ],
+    [
+        'hook' => \core\hook\output\before_http_headers::class,
+        'callback' => [\local_accessibilitytool\local\hooks\before_http_headers::class, 'callback'],
+    ],
 ];
