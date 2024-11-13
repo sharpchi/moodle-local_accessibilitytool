@@ -15,23 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version file for local_accessibilitytool
+ * Hook callbacks for Accessibility Tool
  *
- * @package   local_accessibilitytool
- * @author    Mark Sharp <m.sharp@chi.ac.uk>
- * @author    Alex Walker
- * @copyright 2018 University of Glasgow {@link https://www.gla.ac.uk}
- * @copyright 2018 University of Chichester {@link https://www.chi.ac.uk}
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    local_accessibilitytool
+ * @copyright  2024 Southampton Solent University {@link https://www.solent.ac.uk}
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2024111200;
-$plugin->requires = 2024100700;
-$plugin->component = "local_accessibilitytool";
-$plugin->maturity = MATURITY_STABLE;
-$plugin->dependencies = [
-    'theme_boost' => 2022041900,
+$callbacks = [
+    [
+        'hook' => core_user\hook\extend_user_menu::class,
+        'callback' => '\local_accessibilitytool\hook_callbacks::extend_user_menu',
+        'priority' => 0,
+    ]
 ];
-$plugin->supported = [405, 500];

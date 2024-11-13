@@ -23,11 +23,18 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use core\lang_string;
+
 defined('MOODLE_INTERNAL') || die();
 
 if ($hassiteconfig) {
     $settings = new admin_settingpage('local_accessibilitytool', get_string('pluginname', 'local_accessibilitytool'));
     $ADMIN->add('localplugins', $settings);
+
+    $name = 'local_accessibilitytool/enable';
+    $title = new lang_string('enable', 'local_accessibilitytool');
+    $description = '';
+    $settings->add(new admin_setting_configcheckbox($name, $title, $description, true));
 
     $options = [
         "bb" => new lang_string('contrastbb', 'local_accessibilitytool'),

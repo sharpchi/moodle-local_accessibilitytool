@@ -89,6 +89,8 @@ $string['contrastgb'] = "Green on Black theme";
 $string['contrastwg'] = "White on Grey theme";
 $string['contrastyb'] = "Yellow on Black theme";
 
+$string['enable'] = 'Enable';
+
 $string['features'] = 'Features';
 $string['flattengridformat'] = "Flatten Grid Format";
 $string['flattengridformat_help'] = "If you don't have Grid Format in your Moodle, leave this disabled.";
