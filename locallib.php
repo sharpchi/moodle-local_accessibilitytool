@@ -26,27 +26,6 @@
 namespace local_accessibilitytool;
 
 /**
- * Adds user menu item if not already present.
- */
-function add_usermenuitem() {
-    $menuitems = get_config("core", 'customusermenuitems');
-    if (strpos($menuitems, "accessibilitytool,local_accessibilitytool") !== false) {
-        return;
-    }
-
-    $linetoadd = "accessibilitytool,local_accessibilitytool|/local/accessibilitytool/manage.php\n";
-    $menuitems = $linetoadd . $menuitems;
-    set_config('customusermenuitems', $menuitems);
-}
-
-/**
- * Removes the menu item, if plugin is disabled or uninstalled.
- */
-function remove_usermenuitem() {
-
-}
-
-/**
  * Applies user preferences to current page
  * by adding classes to header and loading javascript.
  * @param moodle_page $page Page object

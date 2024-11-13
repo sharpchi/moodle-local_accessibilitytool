@@ -33,7 +33,6 @@ require_once($CFG->dirroot . "/local/accessibilitytool/locallib.php");
  * @param moodle_page $page Main page object.
  */
 function local_accessibilitytool_page_init(moodle_page $page) {
-    \local_accessibilitytool\add_usermenuitem();
     \local_accessibilitytool\apply_settings($page);
 }
 
