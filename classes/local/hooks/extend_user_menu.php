@@ -29,7 +29,7 @@ class extend_user_menu {
     /**
      * Extend user menu with accessibility tool.
      *
-     * @param extend_user_menu $hook
+     * @param \core_user\hook\extend_user_menu $hook
      * @return void
      */
     public static function callback(\core_user\hook\extend_user_menu $hook): void {
