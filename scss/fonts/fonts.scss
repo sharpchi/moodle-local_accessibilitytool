@@ -4,7 +4,7 @@
 
 body {
     &.at-font-modern {
-        :not(.fontstyle_default, .fa) {
+        :not(.fontstyle_default, .fa, .fas, .far, .fal, .fad, .fab) {
             font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
         }
         h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
@@ -12,7 +12,7 @@ body {
         }
     }
     &.at-font-classic {
-        :not(.fontstyle_default, .fa) {
+        :not(.fontstyle_default, .fa, .fas, .far, .fal, .fad, .fab) {
             font-family: "Palatino", "Times New Roman", serif;
         }
         h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
@@ -20,7 +20,7 @@ body {
         }
     }
     &.at-font-comic {
-        :not(.fontstyle_default, .fa) {
+        :not(.fontstyle_default, .fa, .fas, .far, .fal, .fad, .fab) {
             font-family: "AT Comic", "Chalkboard", "Comic Sans", "Comic Sans MS", sans-serif;
         }
         h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
@@ -28,7 +28,7 @@ body {
         }
     }
     &.at-font-mono {
-        :not(.fontstyle_default, .fa) {
+        :not(.fontstyle_default, .fa, .fas, .far, .fal, .fad, .fab) {
             font-family: "AT Mono", "Menlo", "Courier New", monospace;
         }
         h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
@@ -36,7 +36,7 @@ body {
         }
     }
     &.at-font-opendyslexic {
-        :not(.fontstyle_default, .fa) {
+        :not(.fontstyle_default, .fa, .fas, .far, .fal, .fad, .fab) {
             font-family: "OpenDyslexic", sans-serif;
         }
         h1, h2, h3, h4, h5 { /* stylelint-disable-line selector-list-comma-newline-after */
