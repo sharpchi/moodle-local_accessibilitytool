@@ -111,7 +111,7 @@ jobs:
 
       - name: Grunt
         if: ${{ !cancelled() && matrix.runchecks == 'all' }}
-        run: moodle-plugin-ci grunt -t amd -t gherkinlink -t stylelint
+        run: moodle-plugin-ci grunt -t amd -t gherkinlint -t stylelint
 
       - name: PHPUnit tests
         if: ${{ !cancelled() }}
