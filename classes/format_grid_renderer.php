@@ -32,7 +32,6 @@ if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) :
      * Grid format renderer class.
      */
     class local_accessibilitytool_format_grid_renderer extends format_grid_renderer {
-
         /**
          * Output the html for a multiple section page
          *

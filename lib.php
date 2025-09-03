@@ -53,11 +53,13 @@ function local_accessibilitytool_get_fontawesome_icon_map() {
  * @param stdClass        $course      The course to object for the tool
  * @param context_course  $coursecontext     The context of the course
  */
-function local_accessibilitytool_extend_navigation_user_settings(navigation_node $useraccount,
-                                                                stdClass $user,
-                                                                context_user $usercontext,
-                                                                stdClass $course,
-                                                                context_course $coursecontext) {
+function local_accessibilitytool_extend_navigation_user_settings(
+    navigation_node $useraccount,
+    stdClass $user,
+    context_user $usercontext,
+    stdClass $course,
+    context_course $coursecontext
+) {
     global $PAGE;
     // Don't bother doing needless calculations unless we are on the relevant pages.
     $onpreferencepage = $PAGE->url->compare(new moodle_url('/user/preferences.php'), URL_MATCH_BASE);
@@ -65,9 +67,9 @@ function local_accessibilitytool_extend_navigation_user_settings(navigation_node
         return null;
     }
 
-    $parent = $useraccount->parent->find("useraccount",
-                                        navigation_node::TYPE_CONTAINER);
-    $parent->add(get_string("accessibilitytoolpreferences", "local_accessibilitytool"),
-            new moodle_url("/local/accessibilitytool/manage.php"));
-
+    $parent = $useraccount->parent->find("useraccount", navigation_node::TYPE_CONTAINER);
+    $parent->add(
+        get_string("accessibilitytoolpreferences", "local_accessibilitytool"),
+        new moodle_url("/local/accessibilitytool/manage.php")
+    );
 }

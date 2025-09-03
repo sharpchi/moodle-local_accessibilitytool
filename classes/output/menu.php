@@ -84,7 +84,7 @@ class menu implements renderable, templatable {
      * @param renderer_base $output
      * @return stdClass
      */
-    public function export_for_template(renderer_base $output) {
+    public function export_for_template(renderer_base $output): stdClass {
         global $OUTPUT;
         $config = get_config("local_accessibilitytool");
         $sm = get_string_manager();
@@ -263,7 +263,6 @@ class menu implements renderable, templatable {
         } else {
             unset_user_preference("accessibilitytool_" . $key);
         }
-
     }
 
     /**

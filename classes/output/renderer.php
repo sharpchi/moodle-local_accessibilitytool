@@ -31,7 +31,6 @@ use stdClass;
  * Renderer class for local_accessibilitytool.
  */
 class renderer extends renderer_base {
-
     /**
      * Render the tool's menu.
      *

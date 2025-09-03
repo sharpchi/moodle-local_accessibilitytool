@@ -52,7 +52,7 @@ if (isset($urlparts['query'])) {
     $queryparts = explode('&', $urlparts['query']);
 
     foreach ($queryparts as $part) {
-        list($key, $val) = explode('=', $part);
+        [$key, $val] = explode('=', $part);
         $queryparams[$key] = $val;
     }
 }

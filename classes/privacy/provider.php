@@ -30,9 +30,9 @@ use core_privacy\local\request\writer;
 /**
  * Implmentation of provider class.
  */
-class provider implements \core_privacy\local\metadata\provider,
+class provider implements
+    \core_privacy\local\metadata\provider,
     \core_privacy\local\request\user_preference_provider {
-
     /**
      * Returns meta data about this system.
      *
@@ -40,22 +40,14 @@ class provider implements \core_privacy\local\metadata\provider,
      * @return  collection     A listing of user data stored through this system.
      */
     public static function get_metadata(collection $collection): collection {
-        $collection->add_user_preference('accessibilitytool_contrast',
-            'privacy:metadata:preference:contrast');
-        $collection->add_user_preference('accessibilitytool_stripstyles',
-            'privacy:metadata:preference:stripstyles');
-        $collection->add_user_preference('accessibilitytool_font',
-            'privacy:metadata:preference:font');
-        $collection->add_user_preference('accessibilitytool_bold',
-            'privacy:metadata:preference:bold');
-        $collection->add_user_preference('accessibilitytool_spacing',
-            'privacy:metadata:preference:spacing');
-        $collection->add_user_preference('accessibilitytool_size',
-            'privacy:metadata:preference:size');
-        $collection->add_user_preference('accessibilitytool_readtome',
-            'privacy:metadata:preference:readtome');
-        $collection->add_user_preference('accessibilitytool_gridformat',
-            'privacy:metadata:preference:gridformat');
+        $collection->add_user_preference('accessibilitytool_contrast', 'privacy:metadata:preference:contrast');
+        $collection->add_user_preference('accessibilitytool_stripstyles', 'privacy:metadata:preference:stripstyles');
+        $collection->add_user_preference('accessibilitytool_font', 'privacy:metadata:preference:font');
+        $collection->add_user_preference('accessibilitytool_bold', 'privacy:metadata:preference:bold');
+        $collection->add_user_preference('accessibilitytool_spacing', 'privacy:metadata:preference:spacing');
+        $collection->add_user_preference('accessibilitytool_size', 'privacy:metadata:preference:size');
+        $collection->add_user_preference('accessibilitytool_readtome', 'privacy:metadata:preference:readtome');
+        $collection->add_user_preference('accessibilitytool_gridformat', 'privacy:metadata:preference:gridformat');
         return $collection;
     }
 
@@ -77,7 +69,6 @@ class provider implements \core_privacy\local\metadata\provider,
             "accessibilitytool_gridformat",
         ];
         foreach ($preferences as $name => $value) {
-            $descriptionidentifier = null;
             if (!in_array($name, $accessibilitytoolparams)) {
                 continue;
             }
@@ -89,12 +80,7 @@ class provider implements \core_privacy\local\metadata\provider,
                 "local_accessibilitytool",
                 $name,
                 $value,
-                get_string($descriptionidentifier,
-                    "local_accessibilitytool",
-                    (object) [
-                        "value" => $selectedvalue,
-                    ]
-                )
+                get_string($descriptionidentifier, "local_accessibilitytool", ["value" => $selectedvalue])
             );
         }
     }

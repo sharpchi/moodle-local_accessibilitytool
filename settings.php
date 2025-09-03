@@ -50,9 +50,9 @@ if ($hassiteconfig) {
     $name = new lang_string('colourscheme', 'local_accessibilitytool');
     $description = new lang_string('colourscheme_help', 'local_accessibilitytool');
     $default = array_keys($options);
-    $settings->add(new admin_setting_configmultiselect('local_accessibilitytool/contrast',
-        $name, $description, $default, $options
-    ));
+    $settings->add(
+        new admin_setting_configmultiselect('local_accessibilitytool/contrast', $name, $description, $default, $options)
+    );
 
     $options = [
         "classic" => new lang_string('fontclassic', 'local_accessibilitytool'),
@@ -65,13 +65,14 @@ if ($hassiteconfig) {
     $name = new lang_string('fontstyle', 'local_accessibilitytool');
     $description = new lang_string('fontstyle_help', 'local_accessibilitytool');
     $default = array_keys($options);
-    $settings->add(new admin_setting_configmultiselect('local_accessibilitytool/fontstyle',
-        $name, $description, $default, $options
-    ));
+    $settings->add(
+        new admin_setting_configmultiselect('local_accessibilitytool/fontstyle', $name, $description, $default, $options)
+    );
 
     $name = new lang_string('flattengridformat', 'local_accessibilitytool');
     $description = new lang_string('flattengridformat_help', 'local_accessibilitytool');
     $default = 0;
-    $settings->add(new admin_setting_configcheckbox('local_accessibilitytool/flattengridformat',
-        $name, $description, $default));
+    $settings->add(
+        new admin_setting_configcheckbox('local_accessibilitytool/flattengridformat', $name, $description, $default)
+    );
 }
