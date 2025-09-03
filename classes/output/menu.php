@@ -88,7 +88,8 @@ class menu implements renderable, templatable {
         global $OUTPUT;
         $config = get_config("local_accessibilitytool");
         $sm = get_string_manager();
-        $this->data->about = get_string('about', 'local_accessibilitytool');
+        $preamble = $config->preamble ?? '';
+        $this->data->about = get_string('about', 'local_accessibilitytool', $preamble);
 
         // Contrast user preferences.
         $contrast = get_user_preferences("accessibilitytool_contrast", "default");

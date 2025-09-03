@@ -25,8 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['about'] = '<h3>About accessibility tool</h3>
-    <p>This tool has been designed to help you personalise Moodle\'s appearance to make it easier for you to use Moodle.</p>';
+$string['about'] = '<h3>About accessibility tool</h3>{$a}';
 $string['about_colourscheme'] = '<h4>Colour scheme</h4>
     <p>The purpose of the colour schemes is to provide a distraction free environment that is easy on the eyes.
     All of the colour schemes have been tested for contrast and pass the <a href="https://webaim.org/resources/contrastchecker/" title="Link to WebAIM contrast checker">WCAG AAA contrast ratio</a>.</p>
@@ -110,6 +109,9 @@ $string['gridformatoff'] = "Use Grid Format layout normally";
 $string['gridformaton'] = "Flatten Grid Format layout";
 
 $string['pluginname'] = "Accessibility Tool";
+$string['preamble'] = 'Preamble';
+$string['preamble_desc'] = 'This text will be inserted on the Accessibility tool page. Use it for adding further information about accessibility help provided by your institution; include links and contact details.';
+$string['preambledefault'] = '<p>This tool has been designed to help you personalise Moodle\'s appearance to make it easier for you to use Moodle.</p>';
 $string["privacy:metadata:preference:bold"] = "The boldness of text selected by the user.";
 $string["privacy:metadata:preference:contrast"] = "The contrast theme selected by the user.";
 $string["privacy:metadata:preference:font"] = "The font face selected by the user.";

@@ -36,6 +36,12 @@ if ($hassiteconfig) {
     $description = '';
     $settings->add(new admin_setting_configcheckbox($name, $title, $description, true));
 
+    $name = 'local_accessibilitytool/preamble';
+    $title = new lang_string('preamble', 'local_accessibilitytool');
+    $description = new lang_string('preamble_desc', 'local_accessibilitytool');
+    $default = new lang_string('preambledefault', 'local_accessibilitytool');
+    $settings->add(new admin_setting_configtextarea($name, $title, $description, $default));
+
     $options = [
         "bb" => new lang_string('contrastbb', 'local_accessibilitytool'),
         "bg" => new lang_string('contrastbg', 'local_accessibilitytool'),
