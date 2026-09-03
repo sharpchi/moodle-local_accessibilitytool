@@ -35,7 +35,7 @@ require_login();
 $PAGE->set_context(\context_system::instance());
 
 $renderer = $PAGE->get_renderer('local_accessibilitytool');
-$atr = optional_param("atr", "", PARAM_RAW);
+$atr = optional_param('atr', '', PARAM_URL);
 $urlparts = [];
 if ($atr == "") {
     if (isset($_SERVER['HTTP_REFERER'])) {
@@ -59,12 +59,18 @@ if (isset($urlparts['query'])) {
 
 $returnurl = new \moodle_url($urlparts['path'], $queryparams);
 
+// Ensure return URL is not external to prevent open redirect vulnerabilities.
+if (!$returnurl->is_local_url()) {
+    $returnurl = new \moodle_url('/');
+}
+
 $menu = new \local_accessibilitytool\output\menu();
 $menu->set_returnurl($returnurl);
 
 $section = optional_param("k", "", PARAM_ALPHA);
 
 if ($section !== "") {
+    require_sesskey();
     $value = required_param("v", PARAM_ALPHANUMEXT);
     $menu->set_user_preference($section, $value);
 }
